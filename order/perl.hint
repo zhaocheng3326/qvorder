@@ -1,0 +1,24 @@
+perl -pe 'm/^(\d*)-(\d*)$/' test 
+
+
+###################  
+my @a=("a","b","c","d","e");
+my @b=("b","g","f","e");
+
+my %a=map{$_=>1} @a;
+my %b=map{$_=>1} @b;
+
+
+
+## overlap uniq -u
+@A = grep( $a{$_}, @b ) ;
+
+
+##  buji 
+
+@B1=grep(!defined $a{$_}, @b);
+@B2=grep(!defined $b{$_}, @a);
+
+### uniq 
+%C=map {$_=>1} @a,@b;
+@C=keys %C;

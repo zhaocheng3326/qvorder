@@ -1,0 +1,10 @@
+stats <- function(d) {
+  s <- summarise(d,
+    mean=mean(met, na.rm=T),
+    var=var(met, na.rm=T),
+    wtd_mean=weighted.mean(met, weight, na.rm=T),
+    wtd_var=wtd.var(met, weight, na.rm=T)
+    )
+  return (s)
+}
+

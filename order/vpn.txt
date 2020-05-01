@@ -1,0 +1,2 @@
+sudo /etc/init.d/network-manager restart
+sudo cat /etc/NetworkManager/system-connections/ps3

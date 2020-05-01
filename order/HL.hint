@@ -1,0 +1,5 @@
+cd /home/zhaocheng/My_project
+rsync -v -PRatrl --exclude="HistM"  lihe@10.41.25.112:/cluster/home/lihe/My_project/./BSSeq/src/DMR_feature_analysis.R ./
+alias SHL='ssh -X -l lihe 10.41.25.100'
+alias SHL2='ssh -X -l lihe 10.41.25.112'
+

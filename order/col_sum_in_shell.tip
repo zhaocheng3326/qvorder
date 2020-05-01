@@ -1,0 +1,1 @@
+cut -f 6 outcome.tmp | echo $[ $(tr '\n' '+' ) 0 ]

@@ -1,0 +1,3 @@
+pip install --user pysam --upgrade
+pip freeze > requirment.txt
+pip install -r requirment.txt

@@ -1,0 +1,29 @@
+sudo docker cp 6e382faafaef:/usr/local/lib/R/site-library/infercnv/extdata/gencode_downsampled.EXAMPLE_ONLY_DONT_REUSE.txt ./
+sudo docker ps -l
+sudo docker images
+
+sudo docker run -it --name gatk broadinstitute/gatk /bin/bash
+sudo docker run -it --name gatk -m 64g  --memory-swappiness 0 --cpus 30 broadinstitute/gatk /bin/bash  ## start container
+sudo docker  stop gatk ## stop container
+### exit means stop
+sudo docker rm gatk ### remove container
+
+
+sudo docker restart gatk
+sudo docker attach gatk
+
+
+sudo docker cp gatk:/gatk/README.md ./
+
+#######sudo docker container create --name gatk -m 64g  --memory-swappiness 0 --cpus 30 broadinstitute/gatk
+
+
+sudo docker run -it --name gatk -m 64g  --memory-swappiness 0 --cpus 30 -v /home/chenzh/Downloads/EnhancedVolcano:/gatk/temp/ broadinstitute/gatk /bin/bash  ## start container
+sudo docker run -it --name gatk -m 64g  --memory-swappiness 0 --cpus 30 -v /home/chenzh/My_project/ScRNA_analysis/tmp_data/All_data2/allel/CX:/home/docker/My_project/ScRNA_analysis/tmp_data/All_data2/allel/CX broadinstitute/gatk  /bin/bash  ## start container
+
+
+
+###################################
+sudo docker run -itd --name gatk -m 64g  --memory-swappiness 0 --cpus 35 -v /home/chenzh/My_project/ScRNA_analysis/tmp_data/All_data2/:/home/docker/My_project/ScRNA_analysis/tmp_data/All_data2/ broadinstitute/gatk /bin/bash
+sudo docker start gatk -i
+sudo docker  exec -it  gatk /bin/bash  ### go the bash of the container

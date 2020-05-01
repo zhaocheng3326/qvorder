@@ -1,0 +1,7 @@
+#ggbio
+R/geom_alignment-method.R:101
+args.gaps$color <- args.gaps$gap.clor ##ZC
+
+
+#R CMD build ggbio/
+#R CMD INSTALL ggbio_1.30.0.tar.ZC.gz

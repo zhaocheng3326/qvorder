@@ -1,0 +1,2 @@
+blat  ~/My_project/millet_sRNA/data/reference/Pm_v1T.DNA.fa Total.filter.CDhit.fa RNA_mapping_DNA.blat.out -t=dna -q=rna -out=blast8
+pblat  Millet_genome_Chr_withUN.fa Total.filter.CDhit.fa RNA_mapping_DNA.blat.out -t=dna -q=rna -out=blast8 -threads=18

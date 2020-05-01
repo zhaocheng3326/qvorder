@@ -1,0 +1,6 @@
+tophat --bowtie1 -N 1 -p 30 --no-convert-bam  -G $GTF -o TP/ $REF unmapped.breakpoints.fa
+tophat -p 28 -G ZmB73_5b_FGS.gff --transcriptome-index tophat_out/ ZmB73_RefGen_v2
+tophat --read-edit-dist 3 -N 3 --transcriptome-index /psc/bioinformatics/zhaocheng/Genome/Zea_mays/REL5b/cDNA_index --no-mixed -p 28 -G $GTF -o ./ $REF $DATA/UD/test_R1.clean.fq.gz $DATA/UD/test_R2.clean.fq.gz
+
+
+tophat --transcriptome-index  CDNA_index -G FES_r1.0.genes.gff3 FES_r1.0.genome

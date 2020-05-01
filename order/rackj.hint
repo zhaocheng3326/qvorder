@@ -1,0 +1,3 @@
+java -classpath /psc/home/zhaocheng/tools/rackJ/rackj.jar misc.GffTree -I TAIR10.mod.gff
+java -classpath /psc/home/zhaocheng/tools/rackJ/rackj.jar misc.CanonicalGFF -I TAIR10.mod.gff -O TAIR10.strand.cgff -GE gene exon -GE pseudogene pseudogenic_exon -GE transposable_element_gene exon
+java -classpath /psc/home/zhaocheng/tools/rackJ/rackj.jar misc.CanonicalGFF -I TAIR10.mod.gff -O TAIR10.strand.model -GE mRNA:miRNA:tRNA:ncRNA:snoRNA:snRNA:rRNA:mRNA_TE_gene exon -GE pseudogenic_transcript pseudogenic_exon

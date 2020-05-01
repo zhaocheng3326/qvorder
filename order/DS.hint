@@ -1,0 +1,1 @@
+java -jar /home/zhaoch/Downloads/picard-tools-1.104/DownsampleSam.jar  I=/home/zhaoch/Project/Chenyouwu_AS/data/tophat/1/accepted_hits.bam O=accepted_hits.bam P=0.05

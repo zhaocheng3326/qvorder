@@ -1,0 +1,5 @@
+bsmap -a 1_L1_R1.fastq -b 1_L1_R2.fastq -d ~/species/ATH/DNA/arab10.fa -n 1 -o col_bsmap.bsp -v 2 -p 18
+ python /usr/local/bin/methratio.py -d ~/species/ATH/DNA/arab10.fa -z dtf_bsmap.bsp -o dtf_bsmap_report.txt
+nohup bsp2sam.py -d ~/species/ATH/DNA/Bismark/Arabidopsis_thaliana.TAIR10.20.dna.toplevel.fa -o col_bsp.sam col_bsmap.bsp 
+bsmap -a 1_clean.fastq -d ~/species/ATH/DNA/arab10.fa -n 1 -o 1_bsmap.bsp -v 2 -p 18
+methratio.py -d ~/species/ATH/DNA/arab10.fa -z 1_bsmap.bsp -o 1_bsamp_report.txt

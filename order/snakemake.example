@@ -1,0 +1,255 @@
+#install of snakemake 
+conda install -c bioconda -c conda-forge snakemake
+#We recommend installing Snakemake into a virtualenv instead of globally
+#tutorial
+#http://slides.com/johanneskoester/snakemake-tutorial-2016#/18
+
+rule mytask:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "result/{dataset}.txt"
+    script:
+        "scripts/myscript.R"
+
+
+rule myfiltration:
+     input:
+        "result/{dataset}.txt"
+     output:
+        "result/{dataset}.filtered.txt"
+     shell:
+        "mycommand {input} > {output}"
+
+
+rule aggregate:
+    input:
+        "results/dataset1.filtered.txt",
+        "results/dataset2.filtered.txt"
+    output:
+        "plots/myplot.pdf"
+    script:
+        "scripts/myplot.R"
+
+
+rule sort:
+    input:
+        "path/to/dataset.txt"
+    output:
+        "dataset.sorted.txt"
+    shell:
+        "sort {input} > {output}"
+
+
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "sort {input} > {output}"
+
+
+rule sort_and_annotate:
+    input:
+        "path/to/{dataset}.txt",
+        "path/to/annotation.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "paste <(sort {input[0]}) {input[1]} > {output}"
+
+rule sort_and_annotate:
+    input:
+        a="path/to/{dataset}.txt",
+        b="path/to/annotation.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "paste <(sort {input.a}) {input.b} > {output}"
+
+rule sort:
+    input:
+        a="path/to/{dataset}.txt"
+    output:
+        b="{dataset}.sorted.txt"
+    run:
+        with open(output.b, "w") as out:
+            for l in sorted(open(input.a)):
+                print(l, file=out)
+
+
+DATASETS = ["D1", "D2", "D3"]
+
+
+rule all:
+    input:
+        ["{dataset}.sorted.txt".format(dataset=dataset)
+         for dataset in DATASETS]
+
+
+
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "sort {input} > {output}"
+
+DATASETS = ["D1", "D2", "D3"]
+
+
+rule all:
+    input:
+        ["{dataset}.sorted.txt".format(dataset=dataset)
+         for dataset in DATASETS]
+
+
+
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "sort {input} > {output}"
+
+DATASETS = ["D1", "D2", "D3"]
+
+
+rule all:
+    input:
+        expand("{dataset}.sorted.txt", dataset=DATASETS)
+
+
+
+
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    shell:
+        "sort {input} > {output}"
+
+
+### Job executation
+#output file is target and does not exist
+#output file needed by another executed job and does not exist
+#input file newer than output file
+#input file will be updated by other job
+#execution is enforced
+
+
+
+# Run of snakemake
+# execute the workflow with target D1.sorted.txt
+snakemake D1.sorted.txt
+
+# execute the workflow without target: first rule defines target
+snakemake
+
+# dry-run
+snakemake -n
+
+# dry-run, print shell commands
+snakemake -n -p
+
+# dry-run, print execution reason for each job
+snakemake -n -r
+
+# visualize the DAG of jobs using the Graphviz dot command
+snakemake --dag | dot -Tsvg > dag.svg
+
+
+
+## Defining resource
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    threads: 4
+    resources: mem_mb=100
+    shell:
+        "sort --parallel {threads} {input} > {output}"
+
+
+
+### config file 
+
+configfile: "config.yaml"
+
+
+rule all:
+    input:
+        expand("{dataset}.sorted.txt", dataset=config["datasets"])
+
+
+rule sort:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "{dataset}.sorted.txt"
+    threads: 4
+    resources: mem_mb=100
+    shell:
+        "sort --parallel {threads} {input} > {output}"
+
+
+
+### cluster exeucation
+# execute the workflow on cluster with qsub submission command
+# (and up to 100 parallel jobs)
+snakemake --cluster qsub --jobs 100
+
+# tell the cluster system about the used threads
+snakemake --cluster "qsub -pe threaded {threads}" --jobs 100
+
+# execute the workflow with synchronized qsub
+snakemake --cluster-sync "qsub -sync yes" --jobs 100
+
+# execute the workflow with DRMAA
+snakemake --drmaa --jobs 100
+
+
+#### collobrate with conda to build the assocaited environment 
+rule mytask:
+    input:
+        "path/to/{dataset}.txt"
+    output:
+        "result/{dataset}.txt"
+    conda:
+        "envs/mycommand.yaml"
+    shell:
+        "mycommand {input} > {output}"
+
+
+##External scirpts
+rule sort:
+    input:
+        a="path/to/{dataset}.txt"
+    output:
+        b="{dataset}.sorted.txt"
+    script:
+        "scripts/myscript.R"
+
+## In R scripts
+data <- read.table(snakemake@input[["a"]])
+data <- data[order(data$id),]
+write.table(data, file = snakemake@output[["b"]])
+
+
+## In python scripts
+import pandas as pd
+
+def sort(infile, outfile):
+    data = pd.read_table(infile)
+    data = data.sort_values("id")
+    data.to_csv(outfile, sep="\t")
+
+
+if __name__ == "__main__":
+    sort(snakemake.input.a, snakemake.output.b)
+

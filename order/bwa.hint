@@ -1,0 +1,1 @@
+bwa index -a bwtsw arab10.C.fa

@@ -1,0 +1,525 @@
+  234  ls
+  235  clear
+  236  ls
+  237  cd
+  238  ls
+  239  cdHD
+  240  ls
+  241  cd work/
+  242  ls
+  243  cd Project/
+  244  ls
+  245  cd BS_seq_data/
+  246  ls
+  247  cd analysis/
+  248  ls
+  249  \rm  *.bsp
+  250  ls
+  251  mkdir SRR534209
+  252  mkdir SRR534215
+  253  mkdir SRR534239
+  254  mkdir SRR534266
+  255  ls
+  256  cp SRR501624_bsmap_report.txt SRR534209
+  257  cp SRR501624_bsmap_report.txt SRR534215
+  258  cp SRR501624_bsmap_report.txt SRR534239
+  259  mv SRR501624_bsmap_report.txt SRR534266
+  260  ls
+  261  mv SRR534209_bsmap_report.txt SRR534209
+  262  mv SRR534215_bsmap_report.txt SRR534215
+  263  mv SRR534239_bsmap_report.txt SRR534239
+  264  mv SRR534266_bsmap_report.txt SRR534266
+  265  ls
+  266  pwd
+  267  ls
+  268  cd SRR534209.
+  269  cd SRR534209
+  270  ls
+  271  cd ../SRR534215
+  272  ks
+  273  ls
+  274  cd ..
+  275  ls
+  276  bash work.sh 
+  277  ls
+  278  cd SRR534209/
+  279  ls
+  280  cd ..
+  281  cd ~/code/BSMAP_new/
+  282  ls
+  283  pwd
+  284  ls
+  285  cd -
+  286  ls
+  287  cd SRR534209/
+  288  ls
+  289  ls
+  290  cd ..
+  291  la
+  292  at 9:pm
+  293  at 9:00 pm
+  294  at 9pm
+  295  at 21:00
+  296  at
+  297  at 21:00 today
+  298  at now + 4 hours
+  299  at
+  300  atq
+  301  at 
+  302  l
+  303  ls
+  304   nohup bash work.sh &
+  305  ls
+  306  top
+  307  cd ~/code/BSMAP_new/
+  308  ls
+  309  ls
+  310  celar
+  311  clear
+  312  cd /media/zhaoch/SED/home/zhaoch/work/dtf1/QC_OUT/compare2
+  313  ls
+  314  le col_dtf_S7_CX_down.DMR 
+  315  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR 
+  316  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  317  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  318  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  319  grep ">" ~/species/ATH/DNA/arab10.fa
+  320  ls
+  321  cut -f 1 col_dtf_S7_CX_up.DMR |sort|uniq
+  322  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  323  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |head -n 100>1.txt
+  324  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |head -n 100 > 1.txt
+  325  le 1.txt 
+  326  perl after_methyratio_step8_part.pl 1.txt 
+  327  perl after_methyratio_step8_part.pl 1.txt 200 100
+  328  mv 1.txt 1_2_S&_CX_down.DMR
+  329  mv 1.txt 1_2_S7_CX_down.DMR
+  330  mv 1_2_S 1_2_S7_CX_down.DMR
+  331  perl after_methyratio_step8_part.pl 1_2_S7_CX_down.DMR  200 100
+  332  le 1_2_S7_CX_down.DMR.merge 
+  333  ls
+  334  vi after_methyratio_step8_part.pl 
+  335  perl after_methyratio_step8_part.pl 1_2_S7_CX_down.DMR  200 100
+  336  mv 1.txt 1_2_S7_CX_down.DMR.merge 
+  337  le 1_2_S7_CX_down.DMR.merge 
+  338  ls
+  339  top
+  340  top
+  341  cd
+  342  ls
+  343  ls
+  344  cdHD
+  345  ls
+  346  cd work/
+  347  ls
+  348  cd Project/
+  349  ls
+  350  cd BS_seq_data/
+  351  ls
+  352  cd analysis/
+  353  ls
+  354  llh *txt
+  355  ls
+  356  vi bash work.sh
+  357  ls
+  358  mv bash work.sh
+  359  vi work.sh 
+  360  bash work.sh 
+  361  ls
+  362  vi work.sh 
+  363  ls
+  364  at 21:00
+  365  data
+  366  date
+  367  at now+3 hours
+  368  at
+  369  at -h
+  370  at 21:00
+  371  at now+180 mins
+  372  at
+  373  atq
+  374  atrm
+  375  atq
+  376  at now
+  377  at 17:45
+  378  at 17:45;
+  379  date
+  380  at 21:00:00 today
+  381  at 2:05 tomorrow
+  382  at now + 3 hours
+  383  at now + 3hours
+  384  at now+ 3hours
+  385  at now+3hours
+  386  service atd start
+  387  sudo service atd start
+  388  R
+  389  cd /media/zhaoch/SED/home/zhaoch/work/dtf1/QC_OUT/compare/ZL
+  390  ls
+  391  le up.DMR.split 
+  392  sort -k 2n up.DMR.split 
+  393  sort -k 2n up.DMR.split |le
+  394  cut -f 1 up.DMR.|sort |uniq
+  395  cut -f 1 up.DMR.split|sort |uniq
+  396  cd ..
+  397  ls
+  398  ls
+  399  cd
+  400  ls
+  401  cdhD
+  402  cdHD
+  403  ls
+  404  cd work/
+  405  l
+  406  cd dtf1/
+  407  ls
+  408  cd Sample_1/
+  409  ls
+  410  ls
+  411  cdHD
+  412  ls
+  413  cd work/
+  414  ls
+  415  cd Project/
+  416  ls
+  417  cd BS_seq_data/
+  418  ls
+  419  cd Second_time/
+  420  ls
+  421  mv * ../
+  422  ls
+  423  cd analysis/
+  424  ls
+  425  mv * ../../analysis/
+  426  ls
+  427  cd ..
+  428  ls
+  429  rm -r analysis/
+  430  ls
+  431  cd ..
+  432  ls
+  433  rm -r Second_time/
+  434  s
+  435  ls
+  436  head -n 20000 SRR534215.fastq /home/zhaoch/TEST/1.fastq
+  437  head -n 20000 SRR534215.fastq > /home/zhaoch/TEST/1.fastq
+  438  head -n 20000 SRR534266.fastq > /home/zhaoch/TEST/2.fastq
+  439  cd
+  440  ls
+  441  cd pipeline/
+  442  ls
+  443  cd clean_reads_pair_end/
+  444  ls
+  445  vi QC_version_1_step_1.sh 
+  446  ls
+  447  cd 
+  448  cd TEST/
+  449  ls
+  450  bash ~/pipeline/SE_clear_QC.sh 
+  451  ls
+  452  bash ~/pipeline/SE_clear_QC.sh 
+  453  vi /home/zhaoch/pipeline/clean_reads_pair_end/QC_version_1_step_1.sh 
+  454  bash ~/pipeline/SE_clear_QC.sh 
+  455  ls
+  456  \rm -r TMP/
+  457  bash ~/pipeline/SE_clear_QC.sh 
+  458  ls TMP/
+  459  llh TMP/
+  460  bash ~/pipeline/SE_clear_QC.sh 
+  461  llh TMP/
+  462  \rm -r TMP/
+  463  bash ~/pipeline/SE_clear_QC.sh 
+  464  \rm -r TMP/
+  465  bash ~/pipeline/SE_clear_QC.sh 
+  466  ls
+  467  le outcome.tmp 
+  468  rm outcome.tmp 
+  469  bash ~/pipeline/SE_clear_QC.sh 
+  470  ls
+  471  le outcome.tmp 
+  472  rm outcome.tmp 
+  473  bash ~/pipeline/SE_clear_QC.sh 
+  474  ls
+  475  le outcome.tmp 
+  476  ls
+  477  cdHD
+  478  ls
+  479  cd work/
+  480  ls
+  481  cd Project/
+  482  ls
+  483  cd BS_seq_data/
+  484  ls
+  485  \rm *clean*
+  486  ls
+  487  le nohup
+  488  le nohup.out 
+  489  mv nohup.out nohup_bsmap2.out
+  490  ls
+  491  ls
+  492  nohup bash ~/pipeline/SE_clear_QC.sh &
+  493  ls
+  494  top
+  495  top
+  496  ls
+  497  cdHD
+  498  ls
+  499  top
+  500  top
+  501  ls
+  502  top
+  503  ls
+  504  cdHD
+  505  ls
+  506  cd Project/
+  507  ls
+  508  cdHD
+  509  ls
+  510  cd work/
+  511  ls
+  512  cd Project/
+  513  ls
+  514  cd BS_seq_data/
+  515  ls
+  516  cd analysis/
+  517  ls
+  518  le nohup.out 
+  519  ls
+  520  ls
+  521  top -u zhaoch
+  522  ls
+  523  cd SRR534209/
+  524  ls
+  525  cd MERGE/
+  526  ls
+  527  wc *CX*.merge
+  528  cd ..
+  529  ls
+  530  cd ..
+  531  ls
+  532  vi work.sh 
+  533  cd SRR534215/
+  534  ls
+  535  cd MERGE/
+  536  ls
+  537  wc *CX*.merge
+  538  wc *
+  539  cd ..
+  540  ls
+  541  cd ..
+  542  ls
+  543  cd SRR534239/
+  544  ls
+  545  cd MERGE/
+  546  ls
+  547  wc *
+  548  cd ..
+  549  ls
+  550  cd ..
+  551  ls
+  552  cd SRR534239/
+  553  ls
+  554  cd MERGE/
+  555  ls
+  556  wc *
+  557  le *
+  558  sort -k 2n -k 1n SRR501624_SRR534239_S7_CX_down.DMR.merge 
+  559  sort -k 2n -k 1n SRR501624_SRR534239_S7_CX_down.DMR.merge |le
+  560  cd
+  561  ls
+  562  ls
+  563  cd T
+  564  cdHD
+  565  ls
+  566  cd work/
+  567  cd dtf1/QC_OUT/compare
+  568  ls
+  569  cd ../compare2/
+  570  ls
+  571  cd TEST/
+  572  ls
+  573  cd MERGE/
+  574  ls
+  575  cd ../
+  576  cd  ..
+  577  ls
+  578  ils
+  579  ls
+  580  cd TEST/
+  581  bash after_methyratio_step8.sh  1 2 200 100
+  582  bash ../after_methyratio_step8.sh  1 2 200 100
+  583  ls
+  584  cd MERGE/
+  585  ls
+  586  le 1_2_S7_CX_up.DMR.merge 
+  587  wc *
+  588  le 1_2_S7_CG_down.DMR.merge 
+  589  ls
+  590  cd
+  591  ls
+  592  cd code/
+  593  ls
+  594  cd BSMAP_new/
+  595  s
+  596  ls
+  597  ls
+  598  cd
+  599  ls
+  600  cd Downloads/
+  601  ls
+  602  unzip MACS-master.zip 
+  603  cd MACS-master/
+  604  ls
+  605  le README.rst 
+  606  ls
+  607  cd DEBIAN/
+  608  ls
+  609  cd ..
+  610  ls
+  611  python setup.py install
+  612  sudo python setup.py install
+  613  ls
+  614  macs2 -h
+  615  ls
+  616  ls
+  617  macs2 COMMAND -h
+  618  macs2 -g -h
+  619  macs2 g -h
+  620  macs2 -g -h
+  621  ls
+  622  le README.rst 
+  623  macs2 -h
+  624  ls
+  625  cd
+  626  ls
+  627  cd Downloads/
+  628  wget http://cloud.github.com/downloads/taoliu/MACS/MACS-1.4.2-1.tar.gz
+  629  ls
+  630  tar zxvf MACS-1.4.2-1.tar.gz 
+  631  cd MACS-1.4.2/
+  632  ls
+  633  sudo python setup.py install
+  634  ls
+  635  top
+  636  top
+  637  ls
+  638  cd
+  639  cd
+  640  cd ~/species/
+  641  cd ATH/
+  642  ls
+  643  cd annotation/
+  644  ls
+  645  le TAIR10.gff 
+  646  cd ../
+  647  ls
+  648  cd DNA/
+  649  cd ../
+  650  cd annotation/
+  651  ls
+  652  grep "exon" TAIR10.gff >exon.gff
+  653  le exon.gff 
+  654  ls
+  655  head exon.gff 
+  656  cat exon.gff |awk '{print 'Chr'$0}'|head
+  657  cat exon.gff |awk '{print "Chr"$0}'|head
+  658  cat exon.gff |awk '{print "Chr"$0}'> temp
+  659  mv temp exon.gff 
+  660  head exon.gff 
+  661  ls
+  662  le exon.gff 
+  663  sort exon.gff |uniq -d|wc
+  664  cut -f 9|sort exon.gff |uniq -d|wc
+  665  cut -f1,4,5|sort exon.gff |uniq -d|wc -l
+  666  cut -f1,4,5|sort exon.gff |uniq -d
+  667  cut -f1,4,5 exon.gff |sort|uniq -d|wc -l
+  668  cut -f9 exon.gff |sort|uniq -d|wc -l
+  669  cut -f1-7 exon.gff |sort|uniq -d|head
+  670  cut -f1-7 exon.gff |sort|uniq> temp
+  671  mv temp exon.gff2 
+  672  cut -f1-7 exon.gff |sort|uniq> temp
+  673  awk '{print $0"\t.\t."}' temp |head
+  674  awk '{print $0"\t.\t."}' temp > exon.gff2
+  675  head exon.gff2
+  676  ls
+  677  cd ..
+  678  ls
+  679  cd Histone_modification/
+  680  ls
+  681  ls
+  682  cd H3K36me3_MACS_bedGraph/
+  683  llh *
+  684  cd ../
+  685  ls
+  686  cd H3K36me3_MACS_bedGraph/
+  687  ls
+  688  cd ..
+  689  ls
+  690  cd H3K36me3_MACS_bedGraph/
+  691  ls
+  692  ls
+  693  mv control/* ./
+  694  mv treat/* ./
+  695  ls
+  696  gzip -d H3K36me3_* 
+  697  ls
+  698  mv H3K36me3_control_afterfiting_all.bdg H3K36me3_control_afterfiting_all.bedGraph
+  699  mv H3K36me3_treat_afterfiting_all.bdg H3K36me3_treat_afterfiting_all.bdg H3K36me3_treat_afterfiting_all.bedGraph
+  700  ls
+  701  mv H3K36me3_treat_afterfiting_all.bdg H3K36me3_treat_afterfiting_all.bedGraph
+  702  ls
+  703  pwd
+  704  ls
+  705  cp H3K36me3_control_afterfiting_all.bedGraph control.bedGraph
+  706  vi control.bedGraph 
+  707  ls
+  708  sed -e "s/Chr//g" H3K36me3_control_afterfiting_all.bedGraph > control.bedGraph 
+  709  le control.bedGraph 
+  710  sed -e "s/Chr//g" H3K36me3_treat_afterfiting_all.bedGraph > treat.bedGraph 
+  711  le treat.bedGraph 
+  712  rm  .control.bedGraph.swp 
+  713  lls
+  714  ls
+  715  cd ..
+  716  ls
+  717  le H3K36me3_peaks.xls 
+  718  ls
+  719  ls
+  720  ls
+  721  le H3K36_C_peaks.
+  722  le H3K36_C_peaks.xls 
+  723  ls
+  724  ls
+  725  \rm H3K36_B*
+  726  \rm H3K36_C*
+  727  ls
+  728  pwd
+  729  ls
+  730  ls
+  731  \rm -r H3K36me3_MACS_bedGraph/
+  732  ls
+  733  history > ~/1.his
+  782  ls
+  783  cat ~/order/macs14.order 
+  784  cat ~/order/macs14.order 
+  785  nohup macs14 -t tair9_GSM701923_H3K4me2.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K4me2 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  786  ls
+  787  nohup macs14 -t tair9_GSM701924_H3K4me3.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K4me3 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  788  ls
+  789  nohup macs14 -t tair9_GSM701925_H3K9Ac.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K9Ac --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  790  ls
+  791  nohup macs14 -t tair9_GSM701927_H3K18Ac.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K18Ac --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  792  ls
+  793  nohup macs14 -t tair9_GSM701928_H3K27me1.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n _H3K27me1 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  794  ls
+  795  nohup macs14 -t tair9_GSM701929_H3K27me3.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K27me3 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  796  ls
+  797  nohup macs14 -t tair9_GSM701930_H3K36me2.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me2 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  798  ls
+  799  nohup macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  800  ls
+  801  ls
+  802   macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed  -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 --nomodel --shiftsize 73 -B -S --call-subpeaks&
+  803  ls
+  804  top -u zhaoch
+  805  history |le
+  806  history | tail -n 25 >> ~/1.his 

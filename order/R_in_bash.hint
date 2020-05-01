@@ -1,0 +1,4 @@
+ a[complete.cases(a),]
+ cat $R_CODE|R --no-save
+ factor(a,levels=levels(a),labels=c(1:9))
+installed.packages()[,c('Package','Version','LibPath')]

@@ -1,0 +1,1 @@
+perl ~/code/txt2excel-1.0.pl -f DAS_TYPE_ALL.output,DAS_AA_up.output,DAS_AA_down.output,DAS_AD_up.output,DAS_AD_down.output,DAS_ES_up.output,DAS_ES_down.output,DAS_IR_up.output,DAS_IR_down.output,DAS_MT_up.output,DAS_MT_down.output  -x DAS_total_events.xls

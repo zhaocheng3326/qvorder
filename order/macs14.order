@@ -1,0 +1,1 @@
+macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 --nomodel --shiftsize 73 -B -S --call-subpeaks

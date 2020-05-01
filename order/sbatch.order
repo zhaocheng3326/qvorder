@@ -1,0 +1,8 @@
+sbatch -J ${ITEM}.sm -e ${LOG}/${ITEM}.sm.log -o ${LOG}/${ITEM}.sm.log  -A b2017179 -p core  -n 2 -t 1:00:00 $BIN/smallrna_work_driver.quick.bash $ITEM
+
+projinfo
+
+sbatch -J ${ITEM}.sm -e ${LOG}/${ITEM}.sm.log -o ${LOG}/${ITEM}.sm.log  -A snic2019-8-118 -p core  -n 2 -t 2:00:00 --mail-type=All --mail-user=cheng.zhao@ki.se $BIN/smallrna_work_driver.quick.bash $ITEM
+
+
+sbatch -J ${ITEM}.tb -e ${LOG}/${ITEM}.tb.log -o ${LOG}/${ITEM}.tb.log  --mincpus=2 $BIN/suit/Own_data.batch.bash ${ITEM}

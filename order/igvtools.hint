@@ -1,0 +1,2 @@
+igvtools toTDF colA_CX.wig colA_CX.wig.tdf ~/species/ATH/DNA/arab10.fa
+#### when do the index of the sam file , the sam file must be sorted by Chr and poition####

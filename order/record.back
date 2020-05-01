@@ -1,0 +1,80 @@
+bowtie2
+http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.1.0/
+sudo mv bowtie2* /usr/bin/
+
+bowtie1
+http://sourceforge.net/projects/bowtie-bio/files/bowtie/1.0.0/bowtie-1.0.0-linux-x86_64.zip/download
+
+sudo mv bowtie* /usr/bin/
+
+
+tophat
+http://tophat.cbcb.umd.edu/
+mv * /usr/bin/
+
+samtools
+http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2/download
+apt-get install samtools
+
+R
+http://my.oschina.net/mdhhrbl/blog/156246
+
+
+solexqa
+http://sourceforge.net/projects/solexaqa/files/
+mv 
+
+htseq-count
+http://www-huber.embl.de/users/anders/HTSeq/doc/count.html
+https://pypi.python.org/pypi/HTSeq
+sudo apt-get install build-essential python2.7-dev python-numpy python-matplotlib
+python setup.py build
+sudo python setup.py install
+
+bsmap
+https://code.google.com/p/bsmap/downloads/detail?name=bsmap-2.74.tgz	
+adding "#include<unistd.h>" in the beginning of param.cpp would solve this problem.
+vi sam2bam smatools/samtools => samtools
+
+
+bismark
+
+http://www.bioinformatics.babraham.ac.uk/projects/bismark/
+
+blastall
+ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ls
+
+
+sudo apt-get --purge remove r-base-core
+bioconductor.org
+http://www.bioconductor.org/
+source("http://bioconductor.org/biocLite.R")
+biocLite()
+source("http://bioconductor.org/biocLite.R")
+    biocLite("edgeR")(http://www.bioconductor.org/packages/2.13/bioc/html/edgeR.html)
+ biocLite("DESeq")(http://bioconductor.org/packages/release/bioc/html/DESeq.html)
+
+sra-tool-kit  http://eutils.ncbi.nih.gov/Traces/sra/?view=software
+sudo mv bin/* /usr/bin
+
+
+
+
+.libPaths("/soft/R/lib/R/library")
+.libPaths("~/R/x86_64-pc-linux-gnu-library/2.11")
+print(.libPaths())
+print(sessionInfo())
+print(version)
+sudo apt-get update
+sudo apt-get install libxml2-dev
+
+
+
+fastx-toolkit
+http://hannonlab.cshl.edu/fastx_toolkit/
+wget http://cancan.cshl.edu/labmembers/gordon/files/fastx_toolkit-0.0.12.
+
+scipy
+http://sourceforge.net/projects/scipy/postdownload?source=dlp
+sudo 
+sudo python setup.py install

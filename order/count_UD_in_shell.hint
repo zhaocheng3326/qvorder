@@ -1,0 +1,2 @@
+grep -e ^@HWI 1.fastq |sed 's/.*\(.\{6\}\)$/\1/g'|sort|uniq -c
+zcat lane1_Undetermined_L001_R1_001.fastq.gz |grep "^@HWI"|sed 's/.*\(.\{6\}\)/\1/'|sort |uniq -c > 1.ud

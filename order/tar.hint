@@ -1,0 +1,5 @@
+tar zcvf BSMAP_analysis.tar.gz BSMAP_analysis/
+
+tar xvf GSE24710_RAW.tar
+
+tar -tf VNC-Server-6.3.0-Linux-x64-ANY.tar.gz

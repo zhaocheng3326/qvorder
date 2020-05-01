@@ -1,0 +1,22 @@
+R CMD build packagename
+R CMD INSTALL packagename
+/share/apps/prog/R3.2/bin/R
+d <- do.call(rbind.data.frame, d)
+options(xtable.type='html')
+d <- as.data.frame(cmp$stats %>% arrange(desc(name)))
+#+ results="asis"
+library(xtable)
+print(xtable(d, digits=2))
+
+{r read, cache=opts$cache}
+options(dplyr.width=200)
+h <- read.table(pipe(paste('cut -f 2-5,7,8', filename)), head=T, sep='\t')
+
+
+### replace all na for dplyr
+ %>% replace(.,is.na(.),0)
+
+
+
+ #loom <- open_loom(loomPath, mode="r")
+ loom <- hdf5r::h5file(loomPath, mode="r")

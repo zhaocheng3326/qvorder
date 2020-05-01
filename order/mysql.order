@@ -1,0 +1,2 @@
+mysql -ublast2go -p -h 10.10.212.215
+ show processlist

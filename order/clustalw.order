@@ -1,0 +1,1 @@
+clustalw -INFILE=WT_Hyper_DMR_regin.fa -OUTFILE=output_Clustalw -OUTPUT=FASTA

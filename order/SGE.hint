@@ -1,0 +1,6 @@
+qrsh -l hostname=node117
+ssh node117
+qsub -l hostname=node102  Analysis.bash
+qrsh -q small.q
+qsub -q small.q *.bash
+qdel 4217 -t 4

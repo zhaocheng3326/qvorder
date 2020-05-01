@@ -1,0 +1,2 @@
+  temp.sel.gene.rf <-sel.gene.rf %>% filter(Gene ==GENE) %>% mutate(model=ifelse(type=="intron","gap","exon")) %>% mutate(type=replace(type,type=="intron","exon")) %>% filter(model=="gap") %>%  makeGRangesListFromDataFrame( split.field = "type",keep.extra.columns = TRUE)
+    

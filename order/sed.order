@@ -1,0 +1,10 @@
+sed -i 's/P1/P2/' file  ## directly replaced the original file 
+ sed  's/P1/P2/ng' file ## replace from the N match
+
+ sed '/^$/d' file ## remove the empty line
+
+ test="Hello"
+ sed "s/$text/HELLO/"
+
+
+

@@ -1,0 +1,7 @@
+bowtie  -v 2 -m 1 -q -p 8 ~/species/ATH/DNA/arab10.fa 1.fastq > out.put####this order is used to get the uniq mapped reads
+bowtie  -v 2 -m 1 -S -q -p 8 ~/species/ATH/DNA/arab10.fa 1.fastq > out.sam
+samtools view -Sq 1 out.sam > uniq.sam
+####this order is used to get the uniq mapped reads
+bowtie2-build arab10.fa arab10|||tophat  -p 20 -G ~/species/ATH/annotation/TAIR10.gff -o TEST ~/species/ATH/DNA/arab10 SRR331227.fastq
+bowtie -f -v1 -k2 -m1 -S -p30 $REF  unmapped.breakpoints.fa |samtools view -Sb - > unmapped.breakpoints.bam
+bowtie  --best --strata -a  -S -q -p 28 $REF $DATA/Col.sRNA.fq |samtools view -Sb  -|bamToBed -cigar |sortBed > $TMPD/sRNA/Col.sRNA.bed 2> $TMPD/sRNA/Col.sRNA.log

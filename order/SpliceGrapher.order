@@ -1,0 +1,38 @@
+REF=/psc/home/zhaocheng/species/ATH/DNA/Arabidopsis_thaliana.TAIR10.22.dna.genome.fa
+GTF=/psc/home/zhaocheng/species/ATH/annotation/Arabidopsis_thaliana.TAIR10.22.gtf
+
+build_classifiers.py -d gt,gc -n 400 -f $REF -m $GTF
+
+
+REF=a_thaliana.fa.gz
+GTF=a_thaliana.gff3.gz
+
+build_classifiers.py -d gt,gc -n 400 -f a_thaliana.fa.gz -m a_thaliana.gff3.gz
+grep roc *.cfg
+
+sam_filter.py alignments.sam.gz classifiers.zip -o filtered.sam -f $REF -m $GTF
+predict_splicegraph.py AT2G04700 -d filtered.sam -o AT2G04700.gff  -m $GTF
+view_splicegraphs.py AT2G04700.gff -L  -m $GTF
+plotter.py  AT2G04700_plot.cfg
+
+
+cd ~/tools/SpliceGrapher-0.2.5
+tar zxvf RNA-Seq-tutorial.tgz
+
+sam_filter.py accepted_hits.sam Arabidopsis_thaliana.zip -f a_thaliana.fa -m a_thaliana_reference.gtf -v -o filtered.sam
+predict_graphs.py filtered.sam -m a_thaliana_reduced.gtf -v -d predicted
+plotter.py AT5G18280.cfg -v
+#sam_to_depths.py filtered.sam -o filtered.depths
+#predict_graphs.py filtered.depths  -m a_thaliana_reduced.gtf  -v -d depths_predicted
+
+
+gene_model_to_splicegraph.py -m a_thaliana_reference.gtf -a -S -d reference
+### add example ~/tools/SpliceGrapher-0.2.5
+
+
+find predicted -name "*.gff" > predicted.lis
+find reference/ -name "*.gff" > reference.lis
+splicegraph_statistics.py predicted.lis > AS_summary.out
+
+
+predict_graphs.py filtered.sam -m a_thaliana_reduced.gtf -v -d predicted

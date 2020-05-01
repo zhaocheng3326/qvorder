@@ -1,0 +1,107 @@
+$sqlite3 test.db
+>.databases  --show all databases
+> ATTACH DATABASE 'Databasename' As 'Alias-Name'  -- when mulit database exists ,choose one for attaching
+>DETACH DATABASE 'Alias-Name' --detach the name to a database
+
+# create the table
+>CREATE TABLE database_name.table_name(
+   column1 datatype  PRIMARY KEY(one or more columns),
+   column2 datatype,
+   column3 datatype,
+   .....
+   columnN datatype,
+);
+
+# create the table 
+> CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+.table  --show all the table
+
+# delate the table 
+DROP TABLE database_name.table_name;
+
+
+# insert value and colnames of col
+1.INSERT INTO TABLE_NAME [(column1, column2, column3,...columnN)]  VALUES (value1, value2, value3,...valueN);
+2.INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
+
+{% block %}
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (1, 'Paul', 32, 'California', 20000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (5, 'David', 27, 'Texas', 85000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
+INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
+{% endblock  %}
+
+## SELECT   FORMAT printing
+>.header on
+>.mode column
+> SELECT * FROM COMPANY;
+
+>.width 10, 20, 10        # for format printing
+>SELECT * FROM COMPANY;   # format printing
+
+
+### all the table make up a sql
+>SELECT tbl_name FROM sqlite_master WHERE type = 'table';   --show the names of table
+>SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = 'COMPANY';   -- show the megadata of table 
+
+### SELECT expression  + - *  / %
+>SELECT * FROM COMPANY WHERE NAME LIKE "Da%";
+SELECT AGE FROM COMPANY WHERE EXISTS (SELECT AGE FROM COMPANY WHERE SALARY > 65000);
+
+
+#####
+UPDATE table_name SET column1 = value1, column2 = value2...., columnN = valueN WHERE [condition];
+> UPDATE COMPANY SET ADDRESS = 'Texas' WHERE ID = 6;
+
+
+### Delate the table 
+DELETE FROM table_name WHERE [condition];
+
+## limit
+SELECT column1, column2, columnN FROM table_name LIMIT [A of rows] OFFSET [B]
+get the first Number of A rows and ignore the first number of B
+
+
+# order by
+SELECT column-list FROM table_name  [WHERE condition]  [ORDER BY column1, column2, .. columnN] [ASC | DESC];
+
+
+
+
+#create table test (id integer primary key, value text);
+$sqlite3 test.db .dump > test.db.sql
+# recove database from sql file 
+$sqlite3 test.db < test.db.sql
+
+# change the DB to a file 
+$sq
+
+
+# end with ;
+SELECT
+INSERT
+UPDATE
+DELETE
+ALTER
+DROP
+

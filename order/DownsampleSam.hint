@@ -1,0 +1,2 @@
+java -jar $JAVA R=null I=$TMPD/${ARRAY[$SGE_TASK_ID]}_MAP/accepted_hits.bam O=$TMPD/${ARRAY[$SGE_TASK_ID]}_MAP/${ARRAY[$SGE_TASK_ID]}_${NUM}.sam P=$RATIO
+/psc/home/zhaocheng/tools/picard-tools-1.104/DownsampleSam.jar

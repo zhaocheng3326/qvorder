@@ -1,0 +1,16 @@
+git init
+git add index.html
+git config --global user.email "zhaocheng3326@163.com"
+git config --global user.name "zhaocheng"
+git commit -m "Initial contents of public_html" --author="zhaocheng <zhaocheng3326@163.com>"
+edit index.html
+git commit index.html
+git log
+git show 4677961827e84a417d47fb8b4b06de1588a173ba
+git rm  test.html
+git mv a.txt b.txt
+git ls-files -s
+git rm --cached a.txt
+git rev-parse e6d6
+git branch test
+git checkout test

@@ -1,0 +1,4 @@
+cd /oldgroupshare/bioinformatics/zhaocheng/ATH
+extract_splice_sites.py Arabidopsis_thaliana.TAIR10.22.gtf  >TAIR10.ss
+extract_exons.py Arabidopsis_thaliana.TAIR10.22.gtf >TAIR10.exon
+hisat2-build --ss TAIR10.ss --exon TAIR10.exon Arabidopsis_thaliana.TAIR10.22.dna.genome.fa Arabidopsis_thaliana.TAIR10.22.dna.genome.trans -p 24

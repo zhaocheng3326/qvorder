@@ -1,0 +1,45 @@
+screen -S name
+
+Ctrl+a d
+
+screen -ls
+
+screen -r id
+
+screen -d  ## detach the other one
+screen -r name
+
+screen -x # Attach to a not detached screen # share screen # use Ctrl+a+d to deattach
+
+## new window
+Ctrl+a+c
+
+### rename the window
+Ctrl+a: title "this is the title"
+Ctrl+a A ## change the title
+
+
+Ctrl+A S #split H window
+Ctrl+A Q  # back to one windeo
+Ctrl+A "  # show all windows
+
+
+
+
+Ctrl+a+s ###lock screen , no response
+Ctrl+a+q
+
+Ctrl+a
+Ctrl+a+1
+Ctrl+a+w show all win name## new window
+Ctrl+a+c ### creat new window
+Ctrl+d ### kill current window
+
+Ctrl+a
+Ctrl+a+1 or Ctrl+a+n
+
+
+
+
+
+exit

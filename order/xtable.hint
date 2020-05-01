@@ -1,0 +1,3 @@
+#+ results='asis'
+suppressMessages(library(xtable))
+options(xtable.type='html') #+ results=asis
