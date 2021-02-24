@@ -1,0 +1,2 @@
+cat *txt|awk '{if ($20 <0.05) print $0}' |cut -f 1,2,4-7 |sed -e 's/"//g' |awk '{OFS="\t";print $3,$5,$6,$2"."$1,$6-$5,$4}'  > DAS.bed
+bedToIgv -sess  ~/IGV_session/ZQZ_AS.xml -name -path ~/My_project/ZQZ_BS_AS/results/ -i DAS.bed -slop 500  > ~/My_project/ZQZ_BS_AS/results/DAS_P13.igv.batch

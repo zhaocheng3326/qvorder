@@ -1,0 +1,7 @@
+foo=list(a=1,b=2)
+bar=foreach(x=foo,n=names(foo),.combine=c) %dopar% {
+ rv=list()
+  rv[[n]]=x*2
+   rv}
+suppressMessages(library(doParallel))
+suppressMessages(library(foreach))

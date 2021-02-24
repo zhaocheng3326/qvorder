@@ -1,0 +1,13 @@
+sed -e 's/Parent=\(.*\?\)\./\1/' TAIR10.5UTR.gff |cut -f 9 |le
+intersectBed -a total.bed -b TE.gtf -wa -wb|cut -f 6,16|sed -e 's/gene_id//'|sed -e 's/; transcript_id\(.*\?\)//'|sed -e 's/// |sed -e s///'|sort|uniq|awk {'if ( != ) print bash'} > DAS_OV_TE.name
+grep "transposable_element_gene" TAIR10.gff |cut -f 9 |sed -e 's/.*\?Name=\(.*\?\)/\1/'| cut -d ";" -f 1 > TE.list
+sed -n "1p;4p"  DAS_TYPE_ALL.output
+sed -n "1p;4p;12p;21p;49p;51p;70p;139p;150p;174p;175p;181p" ../results/DAS_TYPE_ALL.output |le
+cut -f 1,12 BS.csv -d ","  |sed -e 's/,.*: /|/'|grep -v "^Run" |sed -e 's/ /_/g'|sed -e 's/|/\t/' > Sample_information
+cut -f 1-3 Table2.DE_genes.csv -d "," |sed -e 's/,/\t/'|sed -e '4,$p' 
+sed -e '2,$p' maize_imprinting_ms_supplemental_dataset_1.txt
+sed 'N;s/\n/ /'
+sed -n '2,$p'
+sed -e 's/[[:space:]][[:space:]]*/\t/g'
+sed -e 's/_i.*\?\t/\t/'
+sed -r 's/_i[0-9]+\t/\t/'

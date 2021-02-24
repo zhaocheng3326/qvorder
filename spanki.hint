@@ -1,0 +1,16 @@
+cd /psc/bioinformatics/zhaocheng/My_project/SPK
+astalavista -t asta -i /psc/bioinformatics/zhaocheng/Genome/ATH/annotation/TAIR10.C.gtf -e [ASE,ASI] 
+# TAIR10.C_sorted.gtf_astalavista.gtf.gz
+
+astalavista -t asta -i /psc/bioinformatics/zhaocheng/Genome/ATH/annotation/Arabidopsis_thaliana.TAIR10.22.gtf -e [ASE,ASI] 
+#Arabidopsis_thaliana.TAIR10.22_sorted.gtf_astalavista.gtf.gz
+#zcat Arabidopsis_thaliana.TAIR10.22_sorted.gtf_astalavista.gtf.gz > Arabidopsis_thaliana.TAIR10.22_sorted.gtf_astalavista.gtf
+REF=/psc/home/zhaocheng/species/ATH/DNA/Arabidopsis_thaliana.TAIR10.22.dna.genome
+GTF=/psc/home/zhaocheng/species/ATH/annotation/Arabidopsis_thaliana.TAIR10.22.gtf
+
+
+
+
+spankijunc -i accepted_hits.bam -g $GTF -f ${REF}.fa
+merge_jtabs ${ITEM}1_RMAP/junctions_out/juncs.all,${ITEM}2_RMAP/junctions_out/juncs.all,${ITEM}3_RMAP/junctions_out/juncs.all > ${TMPD}/AS/${ITEM}/${ITEM}.repsmerged.juncs
+junccomp -a ${BRRAY[$SGE_TASK_ID]}/${BRRAY[$SGE_TASK_ID]}.repsmerged.juncs  -b ${ARRAY[$SGE_TASK_ID]}/${ARRAY[$SGE_TASK_ID]}.repsmerged.juncs -o D_Junction/${BRRAY[$SGE_TASK_ID]}_vs_${ARRAY[$SGE_TASK_ID]}_junccomp 

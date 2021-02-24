@@ -1,0 +1,4 @@
+egrep -e "Sample|_R1"
+grep -n -R -E
+
+grep -e "pattern1" -e "pattern2"

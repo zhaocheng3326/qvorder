@@ -1,0 +1,2 @@
+bowtie2 /psc/home/zhaocheng/My_project/Circular_RNA/data/cRNA.reference test.fastq -p 12  -a | grep -v "@" test|grep  "NM:i"
+bowtie2 ~/My_project/Circular_RNA_mRNA/doc/LincRNA -1 mRNA_flower_clean_pair1.fastq -2 mRNA_flower_clean_pair2.fastq -p 20

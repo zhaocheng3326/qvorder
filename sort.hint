@@ -1,0 +1,2 @@
+sort -k 1,1 -k 2,2n  colA_CX.priwig > test
+cat *.out|sort -t "_" -k 2,2.2 -k 1,1|le

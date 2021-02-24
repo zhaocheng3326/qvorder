@@ -1,0 +1,6 @@
+find . -name "*.pdf" -exec rm -rf {} \;
+ find . -name "*.count" -exec wc {} \; |sort -n |wc
+ find ./ -type f -printf "%s\t%p\n" | sort -n
+ find . -name "*" -exec md5sum {} \;
+
+ \du -a ./ | sort -n -r | head -n 20 ##find big file

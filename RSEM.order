@@ -1,0 +1,4 @@
+grep ">" REF1.fa|cut -f 1 -d " "|sed -e 's/>//' |sed -e 's/_/\t/g'|awk '{print $1"_"$2,$1"_"$2"_"$3}' > REF1_mapping.txt
+rsem-prepare-reference --transcript-to-gene-map  REF1_mapping.txt --bowtie2 REF1.fa REF1
+
+rsem-calculate-expression --bowtie2 -p 20 --paired-end  $TMPD/clean_data/${ARRAY[$SGE_TASK_ID]}clean_R1.fastq $TMPD/clean_data/${ARRAY[$SGE_TASK_ID]}clean_R2.fastq ${RNA_REF} RSEM

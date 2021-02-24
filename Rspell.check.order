@@ -1,0 +1,3 @@
+awk '{print NR":"$0}' All_data_P3_combined.init.analysis.Rmd |sed -n '15,$p'|grep "#" |grep -v "<-"  > test.txt
+spell_check_files("~/My_project/ScRNA_analysis/All_data_P3_combined.init.analysis.Rmd", ignore = character(), lang = "en_US")
+spell_check_files("~/My_project/ScRNA_analysis/test.txt", ignore = character(), lang = "en_US")

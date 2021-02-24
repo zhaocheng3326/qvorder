@@ -1,0 +1,6 @@
+conda create -n scrnaseq_course -y -c scilifelab-lts -c bioconda -c conda-forge lts-workflows-sm-scrnaseq=0.3.3
+# channel of scilifelab-lts bioconda conda-forge 
+# package is lts-workflows-sm-scrnaseq=0.3.3
+conda activate scrnaseq_course
+https://nbisweden.github.io/workshop-scRNAseq/labs/Pipeline_exercise
+

@@ -1,0 +1,6 @@
+#cd ~/species/ATH/annotation
+#astalavista -t asta -i ../Arabidopsis_thaliana.TAIR10.22.gtf
+
+cd /psc/bioinformatics/zhaocheng/Genome/ATH/annotation
+astalavista -t asta -i Arabidopsis_thaliana.TAIR10.22.gtf -c /psc/bioinformatics/zhaocheng/Genome/ATH/DNA/TAIR10_mod/ -a [SEQ]
+astalavista -t asta -i Arabidopsis_thaliana.TAIR10.22.gtf -e [ASE,ASI,DSP,VST]

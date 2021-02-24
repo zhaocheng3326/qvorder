@@ -1,0 +1,9 @@
+join -a2 -1 1 -t $'\t' -o 1.1 1.2 1.3 1.4 2.1 2.2 2.3 2.4 2.5 9vs10.diff col_twd_ht_add_RPKM  > 9vs10_gfold_RPKM.join
+LANG=en_EN join -i -1 1 -2 1 -t$'\t' <(sort -f  -k1,1 Published/counts.txt|cut -f 1  ) <(sort -f -k 1,1 GeneID_GeneName.txt) |cut -f 3
+
+
+join -1 4 -2 1 -t$'\t' -e "NA" -a 1 -o 1.4,1.5,2.2
+
+
+
+LOCALE=C join -1 2 -2 1 -t$'\t' <(LOCALE=C sort -t$'\t' -k2,2 data/GeneID_GeneName.txt) <(python ~/PC/python_code/geneid2go_split.py doc/Human_ebi_geneid2go.mapping|sort -k1,1) |cut -f 2,4|sort -k1,1 |groupBy -g 1 -c 2 -o collapse > doc/Human_refseq_geneid2go.mapping

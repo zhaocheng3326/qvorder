@@ -1,0 +1,129 @@
+pbmc.counts <- Read10X(data.dir = "~/Downloads/pbmc3k/filtered_gene_bc_matrices/hg19/")
+pbmc <- CreateSeuratObject(counts = pbmc.counts)
+pbmc <- NormalizeData(object = pbmc)
+pbmc <- FindVariableFeatures(object = pbmc)
+pbmc <- ScaleData(object = pbmc)
+pbmc <- RunPCA(object = pbmc)
+pbmc <- FindNeighbors(object = pbmc)
+pbmc <- FindClusters(object = pbmc)
+pbmc <- RunTSNE(object = pbmc)
+DimPlot(object = pbmc, reduction = "tsne")
+
+# Get cell and feature names, and total numbers
+colnames(x = pbmc)
+Cells(object = pbmc)
+rownames(x = pbmc)
+ncol(x = pbmc)
+nrow(x = pbmc)
+
+# Get cell identity classes
+Idents(object = pbmc)
+levels(x = pbmc)
+
+# Stash cell identity classes
+pbmc[["old.ident"]] <- Idents(object = pbmc)
+pbmc <- StashIdent(object = pbmc, save.name = "old.ident")
+
+# Set identity classes
+Idents(object = pbmc) <- "CD4 T cells"
+Idents(object = pbmc, cells = 1:10) <- "CD4 T cells"
+
+# Set identity classes to an existing column in meta data
+Idents(object = pbmc, cells = 1:10) <- "orig.ident"
+Idents(object = pbmc) <- "orig.ident"
+
+# Rename identity classes
+pbmc <- RenameIdents(object = pbmc, `CD4 T cells` = "T Helper cells")
+# Subset Seurat object based on identity class, also see ?SubsetData
+subset(x = pbmc, idents = "B cells")
+subset(x = pbmc, idents = c("CD4 T cells", "CD8 T cells"), invert = TRUE)
+
+# Subset on the expression level of a gene/feature
+subset(x = pbmc, subset = MS4A1 > 3)
+
+# Subset on a combination of criteria
+subset(x = pbmc, subset = MS4A1 > 3 & PC1 > 5)
+subset(x = pbmc, subset = MS4A1 > 3, idents = "B cells")
+
+# Subset on a value in the object meta data
+subset(x = pbmc, subset = orig.ident == "Replicate1")
+
+# Downsample the number of cells per identity class
+subset(x = pbmc, downsample = 100)
+# Merge two Seurat objects
+merge(x = pbmc1, y = pbmc2)
+# Merge more than two Seurat objects
+merge(x = pbmc1, y = list(pbmc2, pbmc3))
+
+# View metadata data frame, stored in object@meta.data
+pbmc[[]]
+
+# Retrieve specific values from the metadata
+pbmc$nCount_RNA
+pbmc[[c("percent.mito", "nFeature_RNA")]]
+
+# Add metadata, see ?AddMetaData
+random_group_labels <- sample(x = c("g1", "g2"), size = ncol(x = pbmc), replace = TRUE)
+pbmc$groups <- random_group_labels
+
+# Retrieve or set data in an expression matrix ('counts', 'data', and 'scale.data')
+GetAssayData(object = pbmc, slot = "counts")
+pbmc <- SetAssayData(object = pbmc, slot = "scale.data", new.data = new.data)
+
+# Get cell embeddings and feature loadings
+Embeddings(object = pbmc, reduction = "pca")
+Loadings(object = pbmc, reduction = "pca")
+Loadings(object = pbmc, reduction = "pca", projected = TRUE)
+
+# FetchData can pull anything from expression matrices, cell embeddings, or metadata
+FetchData(object = pbmc, vars = c("PC_1", "percent.mito", "MS4A1"))
+
+# Dimensional reduction plot for PCA or tSNE
+DimPlot(object = pbmc, reduction = "tsne")
+DimPlot(object = pbmc, reduction = "pca")
+
+# Dimensional reduction plot, with cells colored by a quantitative feature
+FeaturePlot(object = pbmc, features = "MS4A1")
+
+# Scatter plot across single cells, replaces GenePlot
+FeatureScatter(object = pbmc, feature1 = "MS4A1", feature2 = "PC_1")
+FeatureScatter(object = pbmc, feature1 = "MS4A1", feature2 = "CD3D")
+
+# Scatter plot across individual features, repleaces CellPlot
+CellScatter(object = pbmc, cell1 = "AGTCTACTAGGGTG", cell2 = "CACAGATGGTTTCT")
+
+VariableFeaturePlot(object = pbmc)
+
+# Violin and Ridge plots
+VlnPlot(object = pbmc, features = c("LYZ", "CCL5", "IL32"))
+RidgePlot(object = pbmc, feature = c("LYZ", "CCL5", "IL32"))
+
+# Heatmaps
+DoHeatmap(object = pbmc, features = heatmap_markers)
+DimHeatmap(object = pbmc, reduction = "pca", cells = 200)
+
+# New things to try!  Note that plotting functions now return ggplot2 objects, so you can add themes, titles, and options
+# onto them
+VlnPlot(object = pbmc, features = "MS4A1", split.by = "groups")
+DotPlot(object = pbmc, features = c("LYZ", "CCL5", "IL32"), split.by = "groups")
+FeaturePlot(object = pbmc, features = c("MS4A1", "CD79A"), blend = TRUE)
+DimPlot(object = pbmc) + DarkTheme()
+DimPlot(object = pbmc) + labs(title = "2,700 PBMCs clustered using Seurat and viewed\non a two-dimensional tSNE")
+
+cbmc <- CreateSeuratObject(counts = cbmc.rna)
+# Add ADT data
+cbmc[["ADT"]] <- CreateAssayObject(counts = cbmc.adt)
+# Run analyses by specifying the assay to use
+NormalizeData(object = cbmc, assay = "RNA")
+NormalizeData(object = cbmc, assay = "ADT", method = "CLR")
+
+# Retrieve and set the default assay
+DefaultAssay(object = cbmc)
+DefaultAssay(object = cbmc) <- "ADT"
+DefaultAssay(object = cbmc)
+
+# Pull feature expression from both assays by using keys
+FetchData(object = cbmc, vars = c("rna_CD3E", "adt_CD3"))
+
+# Plot data from multiple assays using keys
+FeatureScatter(object = cbmc, feature1 = "rna_CD3E", feature2 = "adt_CD3")

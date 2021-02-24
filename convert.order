@@ -1,0 +1,1 @@
+convert -verbose -colorspace RGB -resize 1800 -interlace none -density 300 -quality 100 BSTI_pipeline.pdf BSTI_pipeline.jpeg

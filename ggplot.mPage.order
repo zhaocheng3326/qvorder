@@ -1,0 +1,16 @@
+if (length(cor.plot.out[[m]][[t]]) <= nPlot) {
+  print(cowplot::plot_grid(plotlist=cor.plot.out[[m]][[t]]),nrow=4,ncol=4)
+}else{
+  seqPlot <- seq(1,length( cor.plot.out[[m]][[t]]),by=nPlot)
+  for(i in head(seqPlot,-1)) {
+    print(cowplot::plot_grid(plotlist=cor.plot.out[[m]][[t]][i:(i+nPlot-1)],nrow=4))
+  }
+  print(cowplot::plot_grid(plotlist=cor.plot.out[[m]][[t]][tail(seqPlot,1):length(cor.plot.out[[m]][[t]])]),nrow=4,ncol=4)
+}
+	  
+	  nPlot <- 4
+      seqPlot <- seq(1,length( cor.plot.out[[m]][[t]][[paste(g,R,sep="_")]]),by=nPlot)
+      for(i in head(seqPlot,-1)) {
+        plot_grid(cor.plot.out[[m]][[t]][i:i+nPlot-1])
+      }
+	  plot_grid(cor.plot.out[[m]][[t]][tail(seqPlot,1):length(cor.plot.out[[m]][[t]])])

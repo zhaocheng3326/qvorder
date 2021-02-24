@@ -1,0 +1,1 @@
+ps -ef |grep "smallrna_work_driver.extra.bash" |awk '{print $2}'|tr '\n' ' ' |awk '{print "kill -9 "$0}'|bash -s

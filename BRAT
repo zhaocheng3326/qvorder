@@ -1,0 +1,52 @@
+time zcat /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_1.fq.gz > /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_1.fq
+
+
+real	6m48.832s
+user	3m42.642s
+sys	0m27.996s
+time zcat /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_2.fq.gz > /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_2.fq
+
+
+real	6m50.264s
+user	3m40.504s
+sys	0m25.431s
+time /psc/program/bin/trim -1 /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_1.fq -2 /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_2.fq -P /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt -q 20 -L 33 -m 0
+
+rm -f /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/*q
+
+277.03user 606.74system 22:14.81elapsed 66%CPU (0avgtext+0avgdata 4960maxresident)k
+74416824inputs+103608472outputs (1major+350minor)pagefaults 0swaps
+time /psc/program/bin/brat_bw -s /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_mates1.txt -P /psc/bioinformatics/zhaocheng/Genome/Rice_Japonica -o /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_1_brat_bw_out.txt -m 2  >> /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_brat_bw_log.txt 2>&1
+
+
+real	0m7.050s
+user	0m5.403s
+sys	0m1.495s
+time /psc/program/bin/brat_bw -s /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_mates2.txt -P /psc/bioinformatics/zhaocheng/Genome/Rice_Japonica -o /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_2_brat_bw_out.txt -m 2 -A >> /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_brat_bw_log.txt 2>&1
+
+
+real	1m52.741s
+user	1m49.039s
+sys	0m3.005s
+time /psc/program/bin/brat_bw -1 /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_reads1.txt -2 /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_reads2.txt -pe -o /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_paired_brat_bw_out.txt -P /psc/bioinformatics/zhaocheng/Genome/Rice_Japonica -i 0 -a 1000 -m 2  >> /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_brat_bw_log.txt 2>&1
+
+
+real	476m45.034s
+user	470m17.023s
+sys	4m9.604s
+time /psc/program/bin/remove-dupl -r /psc/bioinformatics/zhaocheng/Genome/Rice_Japonica/RGAP_V7_reference.txt -p /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_pair_list.txt -1 /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_single_list.txt >> /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_brat_bw_log.txt  2>&1
+
+
+real	45m34.208s
+user	39m11.008s
+sys	4m18.061s
+time /psc/program/bin/acgt-count -r /psc/bioinformatics/zhaocheng/Genome/Rice_Japonica/RGAP_V7_reference.txt -P /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt -p /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_pair_list_nodupl.txt -s /psc/bioinformatics/zhaocheng/My_project/TJH/data/WT/wt_single_list_nodupl.txt -B
+
+1507.79user 232.60system 30:06.77elapsed 96%CPU (0avgtext+0avgdata 4061632maxresident)k
+23663104inputs+10778688outputs (1major+32598minor)pagefaults 0swaps
+
+
+ OK 
+
+build_bw -P /psc/bioinformatics/zhaocheng/Genome/ATH/DNA -G 1 -r arab10_C_reference.txt
+build_bw -P /psc/bioinformatics/zhaocheng/Genome/ATH/DNA -G 2 -r arab10_C_reference.txt

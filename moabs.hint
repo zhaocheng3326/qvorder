@@ -1,0 +1,14 @@
+~/tools/moabs-v1.3.2.src.x86_64_Linux.data/bin/mcomp -r WT_1/WT_1_bsmap.bam.CG.bed,WT_2/WT_2_bsmap.bam.CG.bed,WT_3/WT_3_bsmap.bam.CG.bed -r var2_1/var2_1_bsmap.bam.CG.bed,var2_2/var2_2_bsmap.bam.CG.bed,var2_3/var2_3_bsmap.bam.CG.bed -m a -m b -c wtVSvar2
+
+
+for ITEM in ko_r1 ko_r2  wt_r1 wt_r2
+do
+	samtools sort  -@ 20 ${ITEM}.bam ${ITEM}.sort
+	/psc/home/zhaocheng/tools/moabs-v1.3.2.src.x86_64_Linux.data/bin/mcall -m ko_r1.sort.bam -r /psc/bioinformatics/zhaocheng/Genome/musculus/mm9_mod.fa -a 0 -p 20
+done
+
+
+/psc/home/zhaocheng/tools/moabs-v1.3.2.src.x86_64_Linux.data/bin/mcall -m ko_r1.sort.bam -r /psc/bioinformatics/zhaocheng/Genome/musculus/mm9_mod.fa -a 0 -p 20
+
+/psc/home/zhaocheng/tools/moabs-v1.3.2.src.x86_64_Linux.data/bin/mcall -m ko_r1.sort.bam -r /psc/bioinformatics/zhaocheng/Genome/musculus/mm9_mod.fa -a 0 -p 20 --reportCpX G --reportCHX arg "A"
+/psc/home/zhaocheng/tools/moabs-v1.3.2.src.x86_64_Linux.data/bin/mcomp -r nWT_1_mcall.bed,nWT_2_mcall.bed,nWT_3_mcall.bed -r nvar2_1_mcall.bed,nvar2_2_mcall.bed,nvar2_3_mcall.bed  -c wtVSvar2.ko.txt -m wt_Comp -m var2_Comp

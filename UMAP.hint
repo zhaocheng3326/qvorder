@@ -1,0 +1,9 @@
+library(reticulate)
+py_install("umap-learn")
+
+conda install r-rcppparallel -c conda-forge
+
+
+library(Seurat)
+pbmc_small <- RunUMAP(object = pbmc_small, dims = 1:5)
+

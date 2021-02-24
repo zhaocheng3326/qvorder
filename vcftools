@@ -1,0 +1,1 @@
+cat a |vcf-annotate -H -f +  > Mo17_vs_B73.reads.contig.snp.nore.eff.filter.vcf

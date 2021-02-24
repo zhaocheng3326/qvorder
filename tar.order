@@ -1,0 +1,9 @@
+tar -cf *.tar [source]
+tar -rvf *.tar new file
+tar -tvf *.tar ### show the contents
+tar -ztvf archive.tar.gz
+
+tar -xvf file.tar file1  file4 # only extract file 1 and file4
+tar -zxvf file.tar.gz file1  file4 # only extract file 1 and file4
+
+tar -AF file1.tar file2.tar ##combine into file1.tar

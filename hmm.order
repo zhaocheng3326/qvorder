@@ -1,0 +1,2 @@
+hmmpress Pfam-A.hmm
+hmmscan --cpu 24 --domtblout TransDecod.pfam.domtblout /psc/bioinformatics/zhaocheng/Genome/Pfam/Pfam-A.hmm Total.filter.CDhit.fa.transdecoder_dir/longest_orfs.pep

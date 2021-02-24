@@ -1,0 +1,4 @@
+grep --color VmSwap /proc/*/status
+gc()
+pryr::mem_used()
+memory.limit(size=)

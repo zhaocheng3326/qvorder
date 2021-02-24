@@ -1,0 +1,3 @@
+sudo umount /dev/sde1
+sudo mount /dev/sde1 /media/liyq/Remove_DISK/
+

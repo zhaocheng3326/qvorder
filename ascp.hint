@@ -1,0 +1,6 @@
+ascp -i ~/asperaweb_id_dsa.putty -k1 -QTr -L ./ -l 200m anonftp@ftp-trace.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR501/SRR501626/SRR501626.sra ./
+ascp -i ~/asperaweb_id_dsa.putty -k1 -QTr -L ./ -l 200m anonftp@ftp-private.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR501/SRR501626/SRR501626.sra ./
+ascp  -i ~/asperaweb_id_dsa.openssh -k 1 -T  -l200m anonftp@ftp.ncbi.nlm.nih.gov:sra/sra-instant/reads/ByExp/sra/SRX/SRX999/SRX999220/SRR1980052/SRR1980052.sra ./
+
+
+sed -e 's/,/\t/g' SraRunInfo.csv |cut -f 1,11 |awk '{print "anonftp@ftp.ncbi.nlm.nih.gov:sra/sra-instant/reads/ByExp/sra/SRX/SRX745/"$2"/"$1"/"$1".sra"}' |awk '{print  "ascp  -i ~/asperaweb_id_dsa.openssh -k 1 -T  -l200m"$0}'

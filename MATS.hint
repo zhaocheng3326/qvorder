@@ -1,0 +1,1 @@
+python ~/tools/MATS.3.0.8/RNASeq-MATS.py -b1 Sample_SRR1005385/tophat/accepted_hits.bam,Sample_SRR1005386/tophat/accepted_hits.bam -b2 Sample_SRR1005401/tophat/accepted_hits.bam,Sample_SRR1005402/tophat/accepted_hits.bam -gtf ~/species/ATH/annotation/TAIR10.gff -o col_suvh456 -t single -len 50  

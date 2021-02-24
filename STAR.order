@@ -1,0 +1,10 @@
+STAR   --runMode genomeGenerate   --runThreadN 10   --genomeDir genome.fa_star_index/   --genomeFastaFiles genome.fa --genomeSAindexNbases 14 --outFileNamePrefix genome.fa_star_index/ -sjdbGTFfile genes-ERCC.gtf
+# -outFilterScoreMinOverLread and --outFilterMatchNminOverLread ## 0.66  means too short
+# --outFilterMismatchNoverLmax 0.04  ## 2 for 51 at most
+
+
+STAR --runThreadN 5 --genomeDir ./doc/ref/star_index --readFilesIn tmp_data/P10665/P10665_1229/02-FASTQ/180830_D00415_0361_ACCJ22ANXX/P10665_1229_S229_L006_R1_001.fastq.gz --outSAMstrandField intronMotif --readFilesCommand zcat --outSAMtype BAM Unsorted  --outFileNamePrefix tmp_data/P10665/P10665_1229/02-FASTQ/180830_D00415_0361_ACCJ22ANXX/P10665_1229_S229_L006_R1_001.
+
+STAR --runThreadN 25 --genomeDir ~/My_project/ScRNA_analysis/doc/ref/star_index --readFilesIn ~/My_project/ScRNA_analysis/tmp_data/P10665/P10665_1229/02-FASTQ/180830_D00415_0361_ACCJ22ANXX/P10665_1229_S229_L006_R1_001.fastq.gz --outSAMstrandField intronMotif --readFilesCommand zcat --outSAMtype BAM Unsorted  --outFileNamePrefix P10665_1229_S229_L006_R1_001. --outFilterScoreMinOverLread 0.4 --outFilterMatchNminOverLread 0.4
+
+STAR --runThreadN 5 --genomeDir ~/My_project/ScRNA_analysis/doc/ref/star_index --readFilesIn ~/My_project/ScRNA_analysis/tmp_data/P10665/P10665_1229/02-FASTQ/180830_D00415_0361_ACCJ22ANXX/P10665_1229_S229_L006_R1_001.fastq.gz --outSAMstrandField intronMotif --readFilesCommand zcat --outSAMtype BAM Unsorted  --outFileNamePrefix P10665_1229_S229_L006_R1_001.

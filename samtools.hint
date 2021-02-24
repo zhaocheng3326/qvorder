@@ -1,0 +1,13 @@
+samtools  merge -nr WT.bam Sample_SRR501594/tophat/accepted_hits.bam Sample_SRR501597/tophat/accepted_hits.bam
+cat *.sam|samtools view -bS - -@ 10
+samtools faidx arab10.C.fa
+samtools mpileup -uD -f /psc/bioinformatics/zhaocheng/Genome/Zea_mays/REL5b/ZmB73_RefGen_v2.fa accepted_hits_6m.bam | bcftools view -vcg - | tee bri_301_raw.vcf 
+samtools view -h accepted_hits.bam|egrep "^@|\bNH:i:1\b"|samtools view -bS - -@ 10 > uniq.accepted_hits.bam
+
+
+samtools mpileup -r chrX:303311 -v -t DP,AD D10_54.merge.sort.dedup.splitN.BaseR.BSSR.bam |bcftools view |grep -v "##"|head -n 2
+
+
+/home/chenzh/Downloads/bam-readcount/bin/bam-readcount -l candidate.SNP.position.mod -f ~/My_project/ScBSseq_analysis/big_doc/RefSeq/genome.fa  ${SA}/${SA}.merge.bam -w 0 > ${SA}/${SA}                                                                                                                                                                                
+    # samtools mpileup ${SA}/${SA}.merge.bam -l candidate.SNP.position.bed -ugf ~/My_project/ScBSseq_analysis/big_doc/RefSeq/genome.fa |bcftools  call -vm  > d
+

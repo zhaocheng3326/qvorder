@@ -1,0 +1,17 @@
+sudo rm -rf /etc/teamviewer/global.conf
+rm -rf ~/.local/share/teamviewer14/logfiles/
+
+
+
+
+
+
+sudo apt-get install macchanger
+
+sudo apt  remove teamviewer
+sudo macchanger --mac 14:b3:1f:29:9f:67 enp0s31f6
+sudo apt-get install teamviewer
+
+#sudo ifconfig enp0s31f6 down
+#sudo ifconfig enp0s31f6 hw ether ac:ed:5c:7f:95:c9
+#sudo ifconfig enp0s31f6 up

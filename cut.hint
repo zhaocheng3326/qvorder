@@ -1,0 +1,4 @@
+cut -f 2,3  -s ( the line not include the sep)
+
+cut -f3 --complement(reverse the cut)
+--output-delimiter

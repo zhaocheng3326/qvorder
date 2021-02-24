@@ -1,0 +1,15 @@
+bedtools nuc -fi ~/species/ATH/DNA/arab10.fa -bed SRR501624_SRR534209_S7_CX_up.DMR.merge####### GC contend` 
+fastaFromBed -fi ~/species/ATH/DNA/Chr_arab10.fa -bed WT_Hyper_DMR_regin.txt -fo WT_Hyper_DMR_regin.out  ###### get the fastq from the bed file 
+intersectBed -a test.part1 -b test1 -wa -wb |groupBy -i stdin -g 6 -c 13,14 -o sum,sum
+genomeCoverageBed -split -bg -ibam accepted_hits.sorted.bam -g dm3.chrom.sizes > accepted_hits.bedgraph
+wigToBigWig accepted_hits.bedgraph dm3.chrom.sizes myfile.bw
+bedToIgv -sess Target_SAM/TAIR10.gff -slop 8000 -i <TEST.gtf >TEST.batch
+bedToIgv -sess  results/TAIR10.xml -name -path results/ -i results/Suspect_Gene.bed -slop 4000  > results/Suspect_Gene.igv.batch
+bedtools  makewindows -b 1.bed -n 10 -i srcwinnum
+subtractBed -a TAIR10.bg.bed -b TAIR10.C.gene.bed -s
+bamToFastq -i BGI1_flower.tophat.unmapped.bam  -fq BGI1_flower.um.fastq
+groupBy -g 1,2,3,6 -c 4,5,7,8 -o distinct,distinct,distinct,distinct
+fastaFromBed -fi $DOC/arab10.C.fa -bed temp1.bed -s -name -fo out.fa
+shuffleBed -i NPS_Gathering.like_bed.filtered.bed -chrom -seed 1  -g /oldgroupshare/bioinformatics/zhaocheng/Genome/ATH/annotation/TAIR10.bg -excl NPS_Gathering.like_bed.filtered.bed
+bedtools makewindows -g  /oldgroupshare/bioinformatics/zhaocheng/Genome/ATH/annotation/TAIR10.bg  -w 100000|awk '{OFS="\t";print $1,$2,$3,$1"_"$2"_"$3}' > TAIR10.bg.100k.windows.bed
+

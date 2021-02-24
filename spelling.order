@@ -1,0 +1,2 @@
+library(spelling)
+ spell_check_files("~/My_project/Extra_smncRNA/src/mRNA.refseq.onlyPC.rmd")

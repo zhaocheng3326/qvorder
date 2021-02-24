@@ -1,0 +1,5 @@
+umap_output <-umap(t(data.integrated@assays$integrated@scale.data[SelectIntegrationFeatures(seurat.data[c("cp","new_ctrl","new_treat")],nfeatures = ngene),]))$layout
+data.integrated[["umap"]] <- CreateDimReducObject(embeddings = umap_output,key = "UMAP_", assay = "RNA")
+
+colorRampPalette(c("#bb30c8","#bb30c8","black","yellow","yellow"))(100)
+(colorRampPalette(c("#FF00FF","#000000","#FFFF00"))(20))

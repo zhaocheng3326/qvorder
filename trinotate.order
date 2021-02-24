@@ -1,0 +1,3 @@
+cd ~/tools/Trinotate/Trinotate-3.0.2/admin
+./Build_Trinotate_Boilerplate_SQLite_db.pl Trinotate
+

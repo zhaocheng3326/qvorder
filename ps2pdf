@@ -1,0 +1,1 @@
+ps2pdf  -sPAPERSIZE=a3 -dOptimize=true -dEmbedAllFonts=true \"$i.fa_1.ps\"  \"$i.fa_1.pdf\" 

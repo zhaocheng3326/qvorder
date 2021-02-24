@@ -1,0 +1,3 @@
+vi /etc/resolv.conf
+search ki.se
+nameserver 130.237.100.10

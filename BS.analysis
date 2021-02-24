@@ -1,0 +1,23 @@
+#!/usr/anno
+
+####BS coverage
+For each Chromosome   All cytosine in Chromosome is A,  (the depth is n) ,there are B cytosines ( Coverage >A) , B/A
+
+
+Depth_coverage
+For each Chromosome   All cytosine in Chromosome is A,  total depth is sum, the depth is sum /A  ( careless of the lowwest coverage)
+
+
+Methylation_level
+
+
+For each Chromosome   All cytosine in Chromosome is A,  total depth is sum, there sum_C in Chromosome.the methylation level is sum_C /sum  ( careless of the lowwest coverege)
+
+
+DMC
+
+wt c==0, mt c >=2; hyper ,
+mt_perC / wt_perC ; hyper
+
+
+

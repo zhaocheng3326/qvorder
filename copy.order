@@ -1,0 +1,2 @@
+cp -rs (soft link)
+cp -P (don't copy the contend of link)

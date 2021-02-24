@@ -1,0 +1,30 @@
+source  /psc/program/install/blast2go_cli_v1.0.2/profile
+cd /home/czhao/tools/blast2go
+
+
+cd /psc/bioinformatics/zhaocheng/Genome/GO/blast2go/blast2go_cli_v1.1.4
+#/psc/bioinformatics/zhaocheng/Genome/GO/blast2go/blast2go_cli_v1.1.4/blast2go_cli.run -createproperties cli.prop
+/psc/bioinformatics/zhaocheng/Genome/GO/blast2go/blast2go_cli_v1.1.4/blast2go_cli.run -properties ../cli.prop -creategodb
+
+
+
+
+
+
+#/psc/program/install/blast2go_cli_v1.0.2/blast2go_cli.run -properties -createproperties cli.prop
+/psc/program/install/blast2go_cli_v1.0.2/blast2go_cli.run -properties cli.prop -creategodb
+/psc/bioinformatics/zhaocheng/Genome/GO/blast2go
+
+
+cd  /psc/bioinformatics/zhaocheng/Genome/GO/blast2go/blast2go_cli_v1.1.4
+/psc/program/install/blast2go_cli_v1.0.2/blast2go_cli.run -properties cli.prop -useobo goslim_plant.obo -loadfasta 1000_plant.fasta -loadblast 1000_plant_blastResult.xml -loadips50 plant_ipsr -mapping -annotation -annex -gograph mf,bp,cc -statistics gdatadis,agodiscc -savedat -savereport
+
+
+#/psc/program/install/blast2go_cli_v1.0.2/blast2go_cli.run -properties ../../cli.prop -useobo goslim_plant.obo -loadfasta 1000_plant.fasta -loadblast 1000_plant_blastResult.xml -loadips50 plant_ipsr -mapping -annotation -annex -gograph mf,bp,cc -statistics gdatadis,agodiscc -savedat -savereport
+
+#-loadblast 1000_plant_blastResult.xml
+#-loadblast 1000_plant_blastResult.xml 
+
+
+cd /psc/home/zhaocheng/My_project/Ass_millet/tmp_data/Blast2GO
+/psc/program/install/blast2go_cli_v1.0.2/blast2go_cli.run -properties cli.prop -useobo go.obo -loadfasta Total.filter.CDhit.fa.transdecoder.mod.pep -protein -loadblast Total.filter.CDhit.fa.transdecoder.mod.pep.xml  -mapping -annotation -annex -gograph mf,bp,cc -statistics gdatadis,agodiscc -savedat -savereport -statistics all -saveannot  -tempfolder /psc/home/zhaocheng/My_project/Ass_millet/tmp_data/Blast2GO/TMP

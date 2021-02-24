@@ -1,0 +1,40 @@
+cat Sample.unique.ID |xargs -P 20 -n 1 bash smallrna_work_driver.bash
+
+#### in bash script
+foo () {
+    local ID=$1
+    awk -v ID=$ID '$4 == ID' sel_TE_data/TE_list/sel_TE_coordinates.bed | bedtools getfasta  -fi ~/Genome/ATH/DNA/arab10.C.fa  -bed - -fo TMP_FA/$ID.fa                                 
+}
+
+export -f foo
+
+cut -f 4 sel_TE_data/TE_list/sel_TE_coordinates.bed |sort -u | xargs -P 19 -n 1 -I {} bash -c 'foo "{}"'
+
+
+
+#### with multiple parameters
+cat b  |xargs -P 19 -n 2  bash  DMR_calculation.driver.bashi
+
+
+
+
+cat temp |xargs -P 10 -n 1 -d "\n" bash -c
+
+
+
+
+
+
+
+
+export -f foo
+cut -f 4 $listTE |sort -u | xargs -P 19 -n 1 -I {} bash -c 'foo "{}"'
+foo () {
+  local TE=$1
+  echo ${TE}
+  echo "-->${TSA}"
+  sleep 2
+}
+export -f foo
+cut -f 4 $listTE |sort -u | head -n 5 | xargs -P 19 -n 1 -I {} bash -c 'foo "{}"'
+

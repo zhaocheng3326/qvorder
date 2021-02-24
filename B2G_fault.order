@@ -1,0 +1,1 @@
+grep "Segmentation"  s2.BLAST_BIN.bash.o37*|cut -f 1 -d ":"|awk -F "." '{print "rm "$0"\n qsub -t "$5"-"$5":1 ~/psc/home/zhaocheng/My_project/BLA/bin/s2.BLAST_BIN.para.bash"}'

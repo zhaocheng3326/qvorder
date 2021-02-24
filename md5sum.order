@@ -1,0 +1,1 @@
+find /path/to/local/destination/folder/ -name "*.md5"

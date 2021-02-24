@@ -1,0 +1,11 @@
+cd /home/chenzh/Genome/Human/CR_tutorial
+
+cellranger mkfastq --id=tutorial_walk_through --run=cellranger-tiny-bcl-1.2.0  --csv=cellranger-tiny-bcl-simple-1.2.0.csv
+#/home/chenzh/Genome/Human/CR_tutorial/tutorial_walk_through/outs/fastq_path/H35KCBCXY
+
+cd ~/Genome/Human/CR_tutorial/run_cellranger_count/
+cellranger count --id=run_count_1kpbmcs --fastqs=/home/chenzh/Genome/Human/CR_tutorial/run_cellranger_count/pbmc_1k_v3_fastqs/ --sample=pbmc_1k_v3 --transcriptome=/home/chenzh/Genome/Human/refdata-cellranger-GRCh38-3.0.0 --localcores 20  --localmem 32
+
+cd ~/Genome/Human/CR_tutorial/run_cellranger_aggr/
+
+ellranger reanalyze --id=AGG123_reanalysis  --matrix=AGG123/outs/filtered_feature_bc_matrix.h5  --params=AGG123_reanalysis.csv

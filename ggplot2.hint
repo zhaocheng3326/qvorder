@@ -1,0 +1,60 @@
+# wrap y label
+aes(x=stringr::str_wrap(Term, 15)
+# set bold label
++theme(axis.title=element_text(face="bold"))
+# order barplot
+GR %>% ggplot+geom_bar(mapping=aes(x=reorder(Term,-log10(pvalue)),y=-log10(pvalue)),stat="identity")+coord_flip()
+### violin plot with point with fill group information
+  temp.sel.gene.exp %>% ggplot(mapping=aes(x=Ctrl_treat,fill=cell.embryo.sex,y=log10(RPKM+1)))+geom_violin()+geom_point(pch=21,position=position_jitterdodge())+facet_wrap(~Type,nrow=1)+ggtitle("XIST")+theme(plot.title=element_text(hjust=0.5))
+
+### get legend
+temp.legend <- cowplot::get_legend(temp.bed %>% ggplot()+geom_line(mapping=aes(x=ISUp_coverage,y=TSD,color=TE)))
+grid.newpage()
+grid::grid.draw(temp.legend)
+
+#### good example
+  temp.title <- paste(c(data.ASS.out %>% filter(ID==n) %>% unite(anno,cell.embryo.sex,CCA,sep=":") %>% pull(anno),n,SNP.gene.pair %>% filter(ID==n) %>% pull(Gene)),collapse=",")
+  temp.plot <- list()
+  temp.plot$p1 <- data.ASS.out.SNP %>% filter(ID==n) %>% ggplot() +  geom_bar(mapping=aes(x=sample,y=counts,fill=HL),stat="identity") + theme(axis.text.x=element_text(angle = 90)) + scale_fill_manual(values=c("firebrick3","royalblue")) + new_scale("fill") +theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())+ facet_grid(Ctrl_treat~CCA,scale="free",space="free_x")+ xlab("")+theme(axis.text.x = element_blank(),axis.ticks.x=element_blank())
+  temp.gg <- ggplot_build(temp.plot$p1)
+  temp.gg.xlabel <- unlist(lapply(temp.gg$layout$panel_params[1:(length(temp.gg$layout$panel_params)/2)],function(x){return(x$x.label)}))
+  temp.gg.anno <- M[temp.gg.xlabel,c("cell.embryo.sex","Ctrl_treat","dataset","Embryo","CCA")] %>% tibble::rownames_to_column("Sample") %>% tbl_df() %>% mutate(Ctrl_treat=as.vector(Ctrl_treat),Embryo=as.vector(Embryo)) %>% mutate(Sample=factor(Sample,temp.gg.xlabel,ordered = T))
+  temp.plot$g2 <-  temp.gg.anno %>% ggplot(mapping=aes(x=Sample))+geom_tile(mapping=aes(y=1,fill=Ctrl_treat))+new_scale("fill")+geom_tile(mapping=aes(y=2,fill=cell.embryo.sex))+scale_fill_manual(values=(temp.col[1:2]))+theme(legend.title=element_blank())+new_scale("fill")+geom_tile(mapping=aes(y=3,fill=dataset))+scale_fill_manual(values = temp.col[3:4])+new_scale("fill")+geom_tile(mapping=aes(y=4,fill=Embryo),show.legend=F)+ylim(1,4)+facet_grid(.~CCA,scale="free",space="free_x") + theme(axis.text.x=element_text(angle = 90))+theme(axis.title=element_blank(),axis.line = element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank())+scale_y_continuous(breaks=c(1:4),labels=c("Treatment","Sex","data.set","Embryo"))+theme(strip.background=element_blank(),strip.text.x=element_blank())
+  
+  plot_grid(plotlist=temp.plot,ncol=1,align="v",axis="lr",rel_heights=c(2,1))
+#####
+
+prety(data$y)
+
+suppressMessages(library(ggrepel))
+geom_text_repel(D.rpkm.along.withcp.usm %>% filter(chr=="chrX" & Type=="All_cells") %>% group_by(Ctrl_treat) %>% arrange(desc(FMratio)) %>% top_n(10,FMratio),mapping=aes(x=middle,y=FMratio,label=Gene),col="red")
+
+
+ suppressMessages(library(scales))
+ DMR.asso.TE$ovTE.size %>% ggplot(mapping = aes(x=Class,y=length,fill=Class,color=Class)) +geom_boxplot(notch = T,width=0.5)+stat_compare_means(method="t.test",comparisons = my_comparision) + theme_classic()+ylab("TE length(kb)")+scale_y_continuous(label=unit_format(unit="kb",scale=10^-3))#,limits = c(0,12000))
+
+
+ggplot(gr) + geom_alignment(mapping=aes(gap.clor=sample))+scale_colour_manual(values=c("Tumor"="white","Normal"="black"))
+
+
+a %>% ggplot() +  geom_bar(mapping=aes(x=sample,y=counts,fill=HL),stat="identity") + facet_grid(Ctrl_treat~CCA,scale="free",space="free_x")+ggtitle(paste(m,n,"N",sep=",")) + xlab("") +theme_minimal() + theme(axis.text.x=element_text(angle = 90,size=0.15)) + theme(plot.margin=unit(c(1,1,5,1),"lines"))+ scale_fill_manual(values=c("firebrick3","royalblue")) + new_scale("fill")+ geom_tile(mapping=aes(x=sample,y=0,width=0.9,fill=Embryo),show.legend=F,height=1.5)
+
+
+a%>% ggplot() +  geom_bar(mapping=aes(x=sample,y=counts,fill=HL),stat="identity") + facet_grid(Ctrl_treat~ID,scale="free",space="free_x")+ ggtitle(paste(m,g,n,"N",sep=",")) + xlab("") + theme(axis.text.x=element_text(angle = 90,size=0.15)) + scale_fill_manual(values=c("firebrick3","royalblue")) + new_scale("fill")+ geom_tile(mapping=aes(x=sample,y=0,width=1.2,fill=Embryo),show.legend=F,height=1)+theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())
+
+geom_bar(mapping=aes(x=length,y=percent,fill=Ctrl_treat),stat="identity",position="dodge")
+
+
+facet_wrap(~type,ncol=1,scale="free_y")
+
+scale_x_log10()
+
+ + theme_classic() + theme(axis.text.x=element_text(angle = 90)) 
+
+qplot(cor.filter[[l]][[type]])+theme_classic()+labs(x="Spearman correlation",title=paste(l,type))+theme(plot.title=element_text(hjust=0.5))
+
+data@reductions$umap@cell.embeddings %>% as.data.frame() %>% tibble::rownames_to_column("cell") %>%tbl_df() %>%  left_join(select(M.org,-not_assigned),by="cell") %>% dplyr::rename(nG=mature.miRNA.nG) %>% ggplot()+geom_point(mapping=aes(x=UMAP_1,y=UMAP_2,col=nG),size=2)+scale_color_gradientn(colours = feature.plot.cor)
+
+
+ DEG.results$C_Mural_ALL_vs_C_Polar_ALL  %>% tibble::rownames_to_column("gene") %>% tbl_df() %>% full_join(Lineage %>% filter(Lineage %in% c("mural","polar")) %>% rename(gene=GeneName) %>% rename(CellLM=Lineage) %>% filter(Rank <101),by="gene")  %>%  tidyr::replace_na(list(Rank=101,CellLM="other")) %>% ggplot()+geom_point(mapping=aes(x=power,y=log2FC,col=Rank,shape=CellLM,size=CellLM))+geom_vline(xintercept=0.6,linetype="dashed",col="red")+geom_hline(yintercept=0.58,linetype="dashed",col="blue")+geom_hline(yintercept=-0.58,linetype="dashed",col="blue")+ggtitle("C_Mural_vs_C_Polar")+ scale_color_gradientn(colours=c("black","grey"))+scale_size_manual(values=c("other"=1.5,"mural"=3,"polar"=3))
+

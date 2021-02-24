@@ -1,0 +1,2 @@
+find . -maxdepth 2  -name "genome.mapping.soap" -exec rm {} \;
+find . -name "map.stat" -atime -1  -exec cat {} \;|

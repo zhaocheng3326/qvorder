@@ -1,0 +1,3 @@
+cd /psc/bioinformatics/zhaocheng/Genome/ATH/annotation
+CODE=/psc/home/zhaocheng/tools/juncBASE_v0.6
+python $CODE/

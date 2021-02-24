@@ -1,0 +1,50 @@
+#snakemake -s cp.quant.map.smk --configfile test.config -n
+
+snakemake -n ## only show the execution plan instead of the whole steps
+snakemake -np target.file ### And also it is how wildcard samples be transfered into
+
+snakemake
+
+# dry-run
+snakemake -n
+
+# dry-run, print shell commands
+snakemake -n -p
+
+# dry-run, print execution reason for each job
+snakemake -n -r
+
+# visualize the DAG of jobs using the Graphviz dot command
+snakemake --dag | dot -Tsvg > dag.svg
+
+### cluster exeucation
+# execute the workflow on cluster with qsub submission command
+# (and up to 100 parallel jobs)
+snakemake --cluster qsub --jobs 100
+
+# tell the cluster system about the used threads
+snakemake --cluster "qsub -pe threaded {threads}" --jobs 100
+
+# execute the workflow with synchronized qsub
+snakemake --cluster-sync "qsub -sync yes" --jobs 100
+
+# execute the workflow with DRMAA
+snakemake --drmaa --jobs 100
+
+snakemake all -np -j 20
+snakemake make_qc_report -p -j 20
+
+snakemake all -s test.Snakefile -np -j 20
+
+
+
+
+
+
+
+
+
+##############work pipeline
+snakemake make_qc_report -p -j 20
+snakemake all -p -j 20
+snakemake make_qc_report --rulegraph -npF |dot -Tpng  > rulegraph.png

@@ -1,0 +1,4 @@
+  GF.met.combine.mod %>% mutate(Lineage=toupper(Lineage)) %>% mutate(Lineage=factor(Lineage,levels=c("EPI","PE","M","MP","P"),ordered = T))
+ tidyr::replace_na(list(cell.sex="Noinfo"))
+ temp.DEG %>% select(gene,power) %>% rename(!!n := power)
+group_by(Region,type,Gene)  %>% do(wtd_cor(.$met,.$TPM,.$weight))

@@ -1,0 +1,1 @@
+LIBGL_DEBUG=verbose rstudio|grep renderer

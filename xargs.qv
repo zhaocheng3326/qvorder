@@ -1,0 +1,3 @@
+cat temp |xargs -P 10 -n 1 -d "\n" bash -c
+cat Sample.unique.ID |xargs -P 20 -n 1 bash smallrna_work_driver.bash
+cat b  |xargs -P 19 -n 2  bash  DMR_calculation.driver.bashi

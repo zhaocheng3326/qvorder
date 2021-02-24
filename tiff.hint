@@ -1,0 +1,2 @@
+for i in *.pdf; do j=`echo $i |sed 's/.pdf//g'`; pdftoppm $i $j; ppm2tiff ${j}-1.ppm ${j}.tif; rm ${j}-1.ppm; done
+

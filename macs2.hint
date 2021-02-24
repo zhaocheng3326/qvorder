@@ -1,0 +1,2 @@
+macs2 callpeak -t SRR1005405.uniq.bed -f BED -g dm -n WT_H3K9me2 -B -q 0.01 
+ macs2 callpeak -t SRR1005405.uniq.bed -f BED -g dm -n WT_H3K9me2 -B -q 0.01 -m 2 50

@@ -1,0 +1,4 @@
+
+sed -e 's/";/||||/g' /psc/home/zhaocheng/species/ATH/annotation/Arabidopsis_thaliana.TAIR10.22.gtf|sed -e 's/;/:/g' |sed -e 's/||||/";/g'
+java -Xmx4G -jar /psc/home/zhaocheng/tools/hartleys-QoRTs-b344b88/QoRTs_1.0.7/QoRTs.jar QC --generatePlots accepted_hits.name.bam /psc/home/zhaocheng/species/ATH/annotation/TAIR10.gff TEMP/
+

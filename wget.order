@@ -1,0 +1,1 @@
+wget -c --limit-rate 20k -t 5 web

@@ -1,0 +1,33 @@
+source ~/miniconda3/bin/activate R3.5
+source ~/miniconda3/bin/activate R3.5
+conda update --all
+conda clean -a
+conda create -n py2.7 -y -c bioconda python=2.7 rpkmforgenes=1.0.1 rseqc=2.6.4
+conda install -c cyclus java-jdk 
+conda list 列出所有安装的包的信息
+
+conda search beautiful-soup 查询包
+
+conda install -n test beautiful-soup 安装包，并指定安装环境，如果没有-n test，则安装到当前环境
+
+conda update beautiful-soup 升级包
+
+conda remove -n test beautiful-soup 移除包
+
+conda env export > environment.yml
+conda env create -f environment.yml
+conda list --explicit > spec-file.txt
+conda create --name myenv --file spec-file.txt
+
+conda info -e 环境信息
+
+conda create -n test python=2.7 创建环境test，并指定python版本，此例为2.7
+
+source activate test 激活环境
+
+source deactivate test 关闭环境
+
+conda remove --name test --all 删除环
+
+
+conda config --add channels new_channel

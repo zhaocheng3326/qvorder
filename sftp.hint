@@ -1,0 +1,2 @@
+sftp <username>-<projid>@grus.uppmax.uu.se
+get -r . /path/to/local/destination/folder/

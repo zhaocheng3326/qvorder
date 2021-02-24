@@ -1,0 +1,500 @@
+  231  ls
+  232  vi ../after_methyratio_step1_part.pl
+  233  top
+  234  ls
+  235  clear
+  236  ls
+  237  cd
+  238  ls
+  239  cdHD
+  240  ls
+  241  cd work/
+  242  ls
+  243  cd Project/
+  244  ls
+  245  cd BS_seq_data/
+  246  ls
+  247  cd analysis/
+  248  ls
+  249  \rm  *.bsp
+  250  ls
+  251  mkdir SRR534209
+  252  mkdir SRR534215
+  253  mkdir SRR534239
+  254  mkdir SRR534266
+  255  ls
+  256  cp SRR501624_bsmap_report.txt SRR534209
+  257  cp SRR501624_bsmap_report.txt SRR534215
+  258  cp SRR501624_bsmap_report.txt SRR534239
+  259  mv SRR501624_bsmap_report.txt SRR534266
+  260  ls
+  261  mv SRR534209_bsmap_report.txt SRR534209
+  262  mv SRR534215_bsmap_report.txt SRR534215
+  263  mv SRR534239_bsmap_report.txt SRR534239
+  264  mv SRR534266_bsmap_report.txt SRR534266
+  265  ls
+  266  pwd
+  267  ls
+  268  cd SRR534209.
+  269  cd SRR534209
+  270  ls
+  271  cd ../SRR534215
+  272  ks
+  273  ls
+  274  cd ..
+  275  ls
+  276  bash work.sh 
+  277  ls
+  278  cd SRR534209/
+  279  ls
+  280  cd ..
+  281  cd ~/code/BSMAP_new/
+  282  ls
+  283  pwd
+  284  ls
+  285  cd -
+  286  ls
+  287  cd SRR534209/
+  288  ls
+  289  ls
+  290  cd ..
+  291  la
+  292  at 9:pm
+  293  at 9:00 pm
+  294  at 9pm
+  295  at 21:00
+  296  at
+  297  at 21:00 today
+  298  at now + 4 hours
+  299  at
+  300  atq
+  301  at 
+  302  l
+  303  ls
+  304   nohup bash work.sh &
+  305  ls
+  306  top
+  307  cd ~/code/BSMAP_new/
+  308  ls
+  309  ls
+  310  celar
+  311  clear
+  312  cd /media/zhaoch/SED/home/zhaoch/work/dtf1/QC_OUT/compare2
+  313  ls
+  314  le col_dtf_S7_CX_down.DMR 
+  315  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR 
+  316  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  317  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  318  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  319  grep ">" ~/species/ATH/DNA/arab10.fa
+  320  ls
+  321  cut -f 1 col_dtf_S7_CX_up.DMR |sort|uniq
+  322  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |le
+  323  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |head -n 100>1.txt
+  324  sort -k 1n -k 2n col_dtf_S7_CX_down.DMR |head -n 100 > 1.txt
+  325  le 1.txt 
+  326  perl after_methyratio_step8_part.pl 1.txt 
+  327  perl after_methyratio_step8_part.pl 1.txt 200 100
+  328  mv 1.txt 1_2_S&_CX_down.DMR
+  329  mv 1.txt 1_2_S7_CX_down.DMR
+  330  mv 1_2_S 1_2_S7_CX_down.DMR
+  331  perl after_methyratio_step8_part.pl 1_2_S7_CX_down.DMR  200 100
+  332  le 1_2_S7_CX_down.DMR.merge 
+  333  ls
+  334  vi after_methyratio_step8_part.pl 
+  335  perl after_methyratio_step8_part.pl 1_2_S7_CX_down.DMR  200 100
+  336  mv 1.txt 1_2_S7_CX_down.DMR.merge 
+  337  le 1_2_S7_CX_down.DMR.merge 
+  338  ls
+  339  top
+  340  top
+  341  cd
+  342  ls
+  343  ls
+  344  cdHD
+  345  ls
+  346  cd work/
+  347  ls
+  348  cd Project/
+  349  ls
+  350  cd BS_seq_data/
+  351  ls
+  352  cd analysis/
+  353  ls
+  354  llh *txt
+  355  ls
+  356  vi bash work.sh
+  357  ls
+  358  mv bash work.sh
+  359  vi work.sh 
+  360  bash work.sh 
+  361  ls
+  362  vi work.sh 
+  363  ls
+  364  at 21:00
+  365  data
+  366  date
+  367  at now+3 hours
+  368  at
+  369  at -h
+  370  at 21:00
+  371  at now+180 mins
+  372  at
+  373  atq
+  374  atrm
+  375  atq
+  376  at now
+  377  at 17:45
+  378  at 17:45;
+  379  date
+  380  at 21:00:00 today
+  381  at 2:05 tomorrow
+  382  at now + 3 hours
+  383  at now + 3hours
+  384  at now+ 3hours
+  385  at now+3hours
+  386  service atd start
+  387  sudo service atd start
+  388  R
+  389  cd /media/zhaoch/SED/home/zhaoch/work/dtf1/QC_OUT/compare/ZL
+  390  ls
+  391  le up.DMR.split 
+  392  sort -k 2n up.DMR.split 
+  393  sort -k 2n up.DMR.split |le
+  394  cut -f 1 up.DMR.|sort |uniq
+  395  cut -f 1 up.DMR.split|sort |uniq
+  396  cd ..
+  397  ls
+  398  ls
+  399  cd
+  400  ls
+  401  cdhD
+  402  cdHD
+  403  ls
+  404  cd work/
+  405  l
+  406  cd dtf1/
+  407  ls
+  408  cd Sample_1/
+  409  ls
+  410  ls
+  411  cdHD
+  412  ls
+  413  cd work/
+  414  ls
+  415  cd Project/
+  416  ls
+  417  cd BS_seq_data/
+  418  ls
+  419  cd Second_time/
+  420  ls
+  421  mv * ../
+  422  ls
+  423  cd analysis/
+  424  ls
+  425  mv * ../../analysis/
+  426  ls
+  427  cd ..
+  428  ls
+  429  rm -r analysis/
+  430  ls
+  431  cd ..
+  432  ls
+  433  rm -r Second_time/
+  434  s
+  435  ls
+  436  head -n 20000 SRR534215.fastq /home/zhaoch/TEST/1.fastq
+  437  head -n 20000 SRR534215.fastq > /home/zhaoch/TEST/1.fastq
+  438  head -n 20000 SRR534266.fastq > /home/zhaoch/TEST/2.fastq
+  439  cd
+  440  ls
+  441  cd pipeline/
+  442  ls
+  443  cd clean_reads_pair_end/
+  444  ls
+  445  vi QC_version_1_step_1.sh 
+  446  ls
+  447  cd 
+  448  cd TEST/
+  449  ls
+  450  bash ~/pipeline/SE_clear_QC.sh 
+  451  ls
+  452  bash ~/pipeline/SE_clear_QC.sh 
+  453  vi /home/zhaoch/pipeline/clean_reads_pair_end/QC_version_1_step_1.sh 
+  454  bash ~/pipeline/SE_clear_QC.sh 
+  455  ls
+  456  \rm -r TMP/
+  457  bash ~/pipeline/SE_clear_QC.sh 
+  458  ls TMP/
+  459  llh TMP/
+  460  bash ~/pipeline/SE_clear_QC.sh 
+  461  llh TMP/
+  462  \rm -r TMP/
+  463  bash ~/pipeline/SE_clear_QC.sh 
+  464  \rm -r TMP/
+  465  bash ~/pipeline/SE_clear_QC.sh 
+  466  ls
+  467  le outcome.tmp 
+  468  rm outcome.tmp 
+  469  bash ~/pipeline/SE_clear_QC.sh 
+  470  ls
+  471  le outcome.tmp 
+  472  rm outcome.tmp 
+  473  bash ~/pipeline/SE_clear_QC.sh 
+  474  ls
+  475  le outcome.tmp 
+  476  ls
+  477  cdHD
+  478  ls
+  479  cd work/
+  480  ls
+  481  cd Project/
+  482  ls
+  483  cd BS_seq_data/
+  484  ls
+  485  \rm *clean*
+  486  ls
+  487  le nohup
+  488  le nohup.out 
+  489  mv nohup.out nohup_bsmap2.out
+  490  ls
+  491  ls
+  492  nohup bash ~/pipeline/SE_clear_QC.sh &
+  493  ls
+  494  top
+  495  top
+  496  ls
+  497  cdHD
+  498  ls
+  499  top
+  500  top
+  501  ls
+  502  ks
+  503  cdHD
+  504  ls
+  505  cd
+  506  cd pipeline/
+  507  ls
+  508  cd BS
+  509  ls
+  510  cd
+  511  cd code/
+  512  cd BSMAP_new/
+  513  ls
+  514  vi after_methyratio_step8_part.pl 
+  515  cdHD
+  516  ls
+  517  cd METH/
+  518  ls
+  519  cdHD
+  520  ls
+  521  cd work/
+  522  ls
+  523  cd Project/
+  524  ls
+  525  cd BS_seq_data/
+  526  ls
+  527  cd analysis/
+  528  ls
+  529  cp work.sh add_tag.sh
+  530  vi add_tag.sh 
+  531  ls
+  532  bash add_tag.sh 
+  533  ls
+  534  cd SRR534266/
+  535  ls
+  536  cd MERGE/
+  537  ls
+  538  cd ..
+  539  rm -r MERGE/
+  540  ls
+  541  ls
+  542  cd ..
+  543  ls
+  544  cd SRR534209/
+  545  ls
+  546  cd MERGE/
+  547  ls
+  548  ls
+  549  cd
+  550  ls
+  551  cd Downloads/
+  552  ls
+  553  cd MACS-master/
+  554  ls
+  555  cd test/
+  556  ls
+  557  cd ..
+  558  ls
+  559  cd MACS2/
+  560  ls
+  561  cd ..
+  562  ls
+  563  ls
+  564  cd bin/
+  565  ls
+  566  cd ..
+  567  ls
+  568  ls
+  569  cdHD
+  570  ls
+  571  top -u zhaoch
+  572  ls
+  573  cdHD
+  574  ls
+  575  cd work/
+  576  ls
+  577  cd Project/
+  578  cd BS_seq_data/
+  579  ls
+  580  cd analysis/
+  581  ls
+  582  le n
+  583  le work.sh 
+  584  le nohup.out 
+  585  ls
+  586  cd
+  587  svn co http://svn.code.sf.net/p/genoviz/code/trunk/tools/FindJunctions
+  588  sudo apt-get install svn
+  589  sudo apt-get install subversion
+  590  ls
+  591  svn co http://svn.code.sf.net/p/genoviz/code/trunk/tools/FindJunctions
+  592  ls
+  593  cd FindJunctions/
+  594  ls
+  595  le README 
+  596  ls
+  597  cd ..
+  598  ls
+  599  cd FindJunctions/
+  600  ant release
+  601  sudo apt-get install ant
+  602  ls
+  603  sudo apt-get install ant1.7
+  604  ls
+  605  ls
+  606  cd ~/species/
+  607  ls
+  608  cd ATH/
+  609  ls
+  610  cd DNA/
+  611  ls
+  612  cd ..
+  613  ls
+  614  cd Histone_modification/
+  615  ls
+  616  mac2 -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -diag
+  617  macs2 -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -diag
+  618  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -diag
+  619  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 --diag
+  620  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 
+  621  ls
+  622  le H3K4me2_summits.bed 
+  623  wc H3K4me2_summits.bed 
+  624  ls
+  625  cdHD
+  626  cd
+  627  ls
+  628  cd Downloads/
+  629  wget http://www.ebi.ac.uk/sites/ebi.ac.uk/files/groups/bertone/software/PeakSplitter_Cpp_1.0.tar.gz
+  630  ls
+  631  tar zxvf PeakSplitter_Cpp_1.0.tar.gz 
+  632  cd PeakSplitter_Cpp/
+  633  ls
+  634  cd PeakSplitter_
+  635  cd PeakSplitter_Linux64/
+  636  ls
+  637  le README 
+  638  cd PeakSplitter_v1/
+  639  ls
+  640  cd ../
+  641  ls
+  642  sudo mv PeakSplitter /usr/local/bin/
+  643  ls
+  644  PeakSplitter 
+  645  cd ~/species/ATH/Histone_modification/
+  646  ls
+  647  macs2 -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -B -S --call-subpeaks
+  648  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -B -S 
+  649  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -B
+  650  ls
+  651  macs2 callpeak -t tair9_GSM701923_H3K4me2.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -B --nomodel --shiftsize 62
+  652  ls
+  653   ls
+  654  cd raw_data/
+  655  ls
+  656  cd ..
+  657  ls
+  658  le H3K4me2_peaks.xls 
+  659  ls
+  660  ls
+  661  le tair9_GSM701923_H3K4me2.bed.gff.bed
+  662  le H3K4me2_peaks.xls
+  663  le H3K4me2_peaks.narrowPeak
+  664  le H3K4me2_summits.bed 
+  665  le H3K4me2_summits.bed 
+  666  le H3K4me2_summits.bed 
+  667  rm H3K4me2*
+  668  ls
+  669  macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 -B -S --call-subpeaks
+  670  ls
+  671  cd H3K36me3_MACS_bedGraph/
+  672  ls
+  673  cd ..
+  674  ls
+  675  le H3K36me3_peaks.bed 
+  676  le H3K36me3_summits.bed 
+  677  macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 --nomodel --shiftsize 73 -B -S --call-subpeaks
+  678  ls
+  679  \rm -r H3K36me3_MACS_bedGraph
+  680  ls
+  681  macs14 -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -g 1.2e8 -n H3K36me3 --nomodel --shiftsize 73 -B -S --call-subpeaks
+  682  ls
+  683  ls
+  684  ls
+  685  le H3K36me3_peaks.bed
+  686  ls
+  687  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -wa -wb -c
+  688  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c
+  689  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 5|sort|head
+  690  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort -n |head
+  691  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort -n |tail
+  692  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort |uniq -c
+  693  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort|uniq -c
+  694  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort|uniq -d -c
+  695  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort|uniq|tail
+  696  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|sort|uniq|head
+  697  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6|
+  698  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6
+  699  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c
+  700  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c
+  701  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|sort|uniq|head
+  702  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6sort -n |uniq|tail
+  703  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq|tail
+  704  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq _c
+  705  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq -c
+  706  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq -c|sort -n
+  707  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq -c|sort -n|more
+  708  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|awk 'if(){}'
+  709  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|awk 'if($6==2141){print $0}'
+  710  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|awk '{if($6==2141){print $0}}'
+  711  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|head
+  712  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff -c|cut -f 6 |sort -n |uniq -c|sort -k2 -n
+  713  wc H3K36me3_peaks.bed 
+  714  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff2 -c|cut -f 6 |sort -n |uniq -c|sort -k2 -nw
+  715  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff2 -c|cut -f 6 |sort -n |uniq -c|sort -k2 -n
+  716  intersectBed -a H3K36me3_peaks.bed -b ../annotation/exon.gff2 -c|cut -f 6 |sort -n |uniq -c|sort -k2 -n
+  717  ls
+  718  macs2 callpeak -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K4me2 -f BED -g 1.2e8 -B --broad-cutoff 0.00001
+  719  macs2 callpeak -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K36_B -f BED -g 1.2e8 -B --broad-cutoff 0.00001
+  720  ls
+  721  le H3K36_B_peaks.xls 
+  722  macs2 callpeak -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K36_B -f BED -g 1.2e8 --nonmodel --shiftsize 73 -B --broad-cutoff 0.00001
+  723  macs2 callpeak -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K36_B -f BED -g 1.2e8 --nomodel --shiftsize 73 -B --broad-cutoff 0.00001
+  724  ls
+  725  le H3K36_B_control_lambda.bdg 
+  726  le H3K36_B_peaks.xls 
+  727  le H3K36_B_peaks.xls 
+  728  macs2 callpeak -t tair9_GSM701931_H3K36me3.bed.gff.bed -c tair9_GSM701933_Input.bed.gff.bed -n H3K36_C -f BED -g 1.2e8 --nomodel --shiftsize 73 -B 
+  729  le H3K36_B_peaks.xls 
+  730  history > ~/2.his

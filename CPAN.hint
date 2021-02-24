@@ -1,0 +1,46 @@
+sudo perl -MCPAN -e shell
+perl -MCPAN -e shell
+install Config::General
+install Math::Round
+install Math::VecStat
+install Params::Validate
+install Readonly
+install Regexp::Common 
+install Set::IntSpan
+install Statistics::Basic
+install Text::Format
+install
+install
+install
+
+
+cpanp
+s conf
+s conf makemakerflags PREFIX=/psc/home/zhaocheng/perl5/lib
+s save
+quit
+
+
+
+o conf makepl_arg PREFIX=/psc/home/zhaocheng/perl5/lib
+o conf mbuildpl_arg "--install_base Params::Validate"
+
+
+./Build install --install_base ~/perl5/lib/
+
+tar xvf Foo-Bar-0.01.tar.gz
+cd Foo-Bar-0.01
+make install
+
+
+perl -e 'use  Text::Format'
+
+
+perl Makefile.PL PREFIX=/psc/home/zhaocheng/perl5/lib
+make 
+make test
+make install
+
+perl Build.PL PREFIX=/psc/home/zhaocheng/perl5/lib
+./Build build
+./Build install --install_base ~/perl5/lib/

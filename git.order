@@ -1,0 +1,3 @@
+git checkout -b bin origin/bin
+git checkout -b fig origin/fig
+git checkout -b script origin/script
