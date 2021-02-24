@@ -1,0 +1,6 @@
+rsem-prepare-reference  --gtf /home/chenzh/Genome/Human/refdata-cellranger-GRCh38-3.0.0/genes/genes.gtf -p 20  /home/chenzh/Genome/Human/refdata-cellranger-GRCh38-3.0.0/fasta /home/chenzh/Genome/Human/refdata-cellranger-GRCh38-3.0.0/rsem
+
+STAR --runThreadN 4 --genomeDir ${GD_star} --readFilesIn ${RD}/${SA}.fastq.gz --quantMode TranscriptomeSAM --outSAMstrandField intronMotif --readFilesCommand zcat --outSAMtype BAM Unsorted  --outFileNamePrefix ${RD}/${SA}/${SA}.
+
+rsem-calculate-expression --alignments -p 4 ${RD}/${SA}/${SA}.Aligned.toTranscriptome.out.bam ${RS_GF} ${RD}/${SA}/${SA}.rsem. -q
+

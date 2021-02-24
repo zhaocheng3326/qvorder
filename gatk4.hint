@@ -1,0 +1,1 @@
+gatk CreateSequenceDictionary -R Homo_sapiens.GRCh38.dna.chromosome.chr.fa

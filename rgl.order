@@ -1,0 +1,15 @@
+data.temp3D <- data.ob %>%  RunUMAP(dims = 1:pc2,verbose = FALSE,n.components=3)
+temp <- data.temp3D@reductions$umap@cell.embeddings %>% as.data.frame() %>% tibble::rownames_to_column("cell") %>% tbl_df()%>% left_join(data.temp3D@meta.data%>% as.data.frame() %>% tibble::rownames_to_column("cell") %>% tbl_df() ,by="cell")
+temp %>% ggplot(aes(x=UMAP_1, y=UMAP_2, z=UMAP_3, color=EML),size=0.5) + theme_void() + axes_3D() +stat_3D()
+
+n="EML"
+temp.col <- as.vector(factor(temp[[n]],label=gg_color_hue(length(unique(temp[[n]])))))
+temp.text <- temp %>% dplyr::rename(sl=n) %>% select(cell,UMAP_1,UMAP_2,UMAP_3,sl) %>% group_by(sl) %>% summarise(UMAP_1=median(UMAP_1),UMAP_2=median(UMAP_2),UMAP_3=median(UMAP_3)) %>% left_join(data.frame(sl=temp[[n]],sl.col=temp.col),by="sl")
+
+
+library(rgl)
+
+plot3d( x=temp$UMAP_1,y=temp$UMAP_2,z=temp$UMAP_3,col =temp.col,type = 's', radius = .1,xlab="UMAP_1", ylab="UMAP_2", zlab="UAMP_3")
+texts3d(temp.text$UMAP_1,temp.text$UMAP_2,temp.text$UMAP_3,text=temp.text$sl,col=temp.text$sl.col,cex=2)
+writeWebGL( filename="3dscatter.html" ,  width=1200, height=1200)
+

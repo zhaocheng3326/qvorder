@@ -6,3 +6,29 @@ sbatch -J ${ITEM}.sm -e ${LOG}/${ITEM}.sm.log -o ${LOG}/${ITEM}.sm.log  -A snic2
 
 
 sbatch -J ${ITEM}.tb -e ${LOG}/${ITEM}.tb.log -o ${LOG}/${ITEM}.tb.log  --mincpus=2 $BIN/suit/Own_data.batch.bash ${ITEM}
+
+
+jobinfo
+jobinfo -u zhaoch
+jobinfo -n 123456
+squeue
+scancel 123456
+scancel -i -u zhaoch  #scancel -u your_account_name -n firsttest -t runnings
+scancel -u your_account_name --state=pending # terminates all your waiting jobs,
+scancel -u your_account_name -n firsttest -t running #
+sbatch run_slurm.sbatch.bash
+
+
+
+With SLURM on Tintin and Milou:
+Usage in project testproj during the current year:
+
+projinfo -y testproj
+Usage in project testproj during the specified two months:
+
+projinfo -s 2010-02 -e 2010-03 testproj
+Usage in your projects today until the moment you run the command:
+
+projinfo -s today
+
+interactive -A snic2020-15-10 -M snowy -p core -n 1 -t 1:00:00

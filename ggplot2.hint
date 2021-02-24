@@ -1,3 +1,5 @@
+# wrap y label
+aes(x=stringr::str_wrap(Term, 15)
 # set bold label
 +theme(axis.title=element_text(face="bold"))
 # order barplot

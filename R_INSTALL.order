@@ -1,0 +1,1 @@
+BiocManager::install("S4Vectors",INSTALL_opts = '--no-lock')

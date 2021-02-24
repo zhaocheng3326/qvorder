@@ -1,3 +1,4 @@
+STAR   --runMode genomeGenerate   --runThreadN 10   --genomeDir genome.fa_star_index/   --genomeFastaFiles genome.fa --genomeSAindexNbases 14 --outFileNamePrefix genome.fa_star_index/ -sjdbGTFfile genes-ERCC.gtf
 # -outFilterScoreMinOverLread and --outFilterMatchNminOverLread ## 0.66  means too short
 # --outFilterMismatchNoverLmax 0.04  ## 2 for 51 at most
 

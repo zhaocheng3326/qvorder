@@ -1,3 +1,5 @@
+#snakemake -s cp.quant.map.smk --configfile test.config -n
+
 snakemake -n ## only show the execution plan instead of the whole steps
 snakemake -np target.file ### And also it is how wildcard samples be transfered into
 
