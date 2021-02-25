@@ -1,3 +1,2 @@
-
 ./configure --prefix=/cluster/home/lihe/.local/bin --enable-pam --enable-colors256 --enable-rxvt_osc --enable-use-locale --enable-telnet
 rpm2cpio ncurses-5.9-14.20130511.el7_4.src.rpm| cpio -idv

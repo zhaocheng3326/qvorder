@@ -1,5 +1,3 @@
-
-broom::tidy ### convert statistical object to tibel
 R CMD build packagename
 R CMD INSTALL packagename
 /share/apps/prog/R3.2/bin/R

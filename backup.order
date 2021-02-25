@@ -4,10 +4,11 @@ tar zcvf zhaocheng_backup_PSC_2016.5.11.tar.gz /psc/home/zhaocheng
 
 
 cd ~/ZCbioninfor/Server
-rsync -v -PRnatrl  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./ # check file size 
+#rsync -v -PRnatrl  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./ # check file size 
+rsync -v -PRnatrl  --exclude="*.html" --exclude="*.png"  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./
 
-rsync -v -PRatrl  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./
+rsync -v -PRatrl  --exclude="*.html" --exclude="*.png"  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./
 
 
 tar zcvf ZCbioninfor_191107.tar.gz
-
+rsync -v -PRatrl --exclude="*.html" --exclude="*.png"  chenzh@lanner-lab.ki.se:/home/chenzh/./{My_project,Install,PC,perl5}/ ./
