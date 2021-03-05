@@ -1,0 +1,16 @@
+library("grid")
+library("gridExtra")
+library("pheatmap")
+
+hmdat=rbind(c(1,2,3),
+            c(3,4,5),
+            c(5,6,7))
+
+hm=pheatmap(hmdat)
+
+lm=rbind(c(1,2),
+         c(3,3))
+grid.arrange(grobs = list(hm[[4]],
+                          hm[[4]],
+                          hm[[4]]),
+             layout_matrix = lm)
