@@ -1,3 +1,6 @@
+#for 10X dataset only
+fastq-dump --split-files --gzip SRR12491161.sra
+
 fastq-dump --split-3 SRR349698.sra &
 fastq-dump --split-3 --gzip SRR517966.sra
 
