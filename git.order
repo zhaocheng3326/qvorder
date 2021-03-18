@@ -1,3 +1,8 @@
+# check the total size for the files git added
+for f in `git status --porcelain | sed 's#^...##'`; do du -cs $f | head -n 1; done | sort -nr  | awk ' {tot = tot+$1; print } END{ printf("%.2fMb\n",tot/(1024*1024)) }' 
+
+
+
 git checkout -b bin origin/bin
 git checkout -b fig origin/fig
 git checkout -b script origin/script

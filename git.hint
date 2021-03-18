@@ -1,3 +1,14 @@
+#' different user with pull request
+$ git checkout -b featureB origin/master
+# (work)
+$ git commit
+$ git push myfork featureB
+# (email maintainer)
+$ git fetch origin
+
+
+
+
 git init
 git add index.html
 git config --global user.email "zhaocheng3326@163.com"
