@@ -1,3 +1,8 @@
+# patchwork for faced_wrap
++theme(strip.placement = NULL)
+
+
+
 # set bold label
 +theme(axis.title=element_text(face="bold"))
 # order barplot
