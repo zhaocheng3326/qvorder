@@ -1,0 +1,31 @@
+
+export RSTUDIO_WHICH_R=/Users/cheng.zhao/miniconda3/envs/R4.0/bin/R  ##conda environment
+export R_PROFILE_USER=/Users/cheng.zhao/miniconda3/envs/R4.0/etc/.Rprofile
+
+#Sys.setlocale("LC_ALL", 'en_US.UTF-8') # in ~.Rprofile
+open -a RStudio
+
+
+
+#solve the rstudio conda R problem
+export RSTUDIO_WHICH_R=/Users/cheng.zhao/miniconda3/envs/R4.0/bin/R
+open -a RStudio
+##
+
+# solve the Character set is not UTF-8; please change your locale 
+export LC_ALL=en_US.UTF-8 # .zshrc
+
+
+
+> c(Sys.getenv("R_PROFILE_USER"), file.path(getwd(),".Rprofile"))
+
+> system("type R")
+R is /usr/local/bin/R
+
+> R.home()
+[1] "/usr/local/Cellar/r/3.2.2_1/R.framework/Resources"
+
+> file.path(R.home("bin"), "R")
+[1] "/usr/local/Cellar/r/3.2.2_1/R.framework/Resources/bin/R"
+
+> file.path(R.home("bin"), "R")
