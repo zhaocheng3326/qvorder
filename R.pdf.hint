@@ -1,0 +1,8 @@
+#extrafont::font_import(path="/home/chenzh/Downloads/fonts/",,prompt = F)
+extrafont::loadfonts()
+theme_set(theme_gray(base_family="Arial"))
+pdf.options(paper = "a4")
+theme_set(theme_gray(base_size = 6))
+#+theme(text = element_text(size = 6))
+#width = 210, height = 297, units = "mm"
+#pdf("test.pdf",8,12)
