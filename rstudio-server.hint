@@ -1,0 +1,85 @@
+ssh chenzh@lanner-lab.ki.se -L127.0.0.1:8787:127.0.0.1:8787
+
+# install different version of R
+
+# R3.5
+sudo vi /etc/rstudio/rserver.conf
+rsession-which-r=/opt/R/3.6.1/bin/R  #R3.5
+rsession-ld-library-path=/home/chenzh/miniconda3/envs/R3.5/lib
+# in R
+condaENV <- "/home/chenzh/miniconda3/envs/R3.5"
+LBpath <- paste0(condaENV ,"/lib/R/library")
+.libPaths(LBpath)
+
+# R3.6
+sudo vi /etc/rstudio/rserver.conf
+rsession-which-r=/opt/R/3.6.2/bin/R  #R3.5
+rsession-ld-library-path=/home/chenzh/miniconda3/envs/R3.6/lib
+# in R
+condaENV <- "/home/chenzh/miniconda3/envs/R3.6"
+LBpath <- paste0(condaENV ,"/lib/R/library")
+.libPaths(LBpath)
+
+# R4.0
+sudo vi /etc/rstudio/rserver.conf
+rsession-which-r=/opt/R/4.0.3/bin/R  #R4.0
+rsession-ld-library-path=/home/chenzh/miniconda3/envs/R4.0/lib
+# in R
+condaENV <- "/home/chenzh/miniconda3/envs/R4.0"
+LBpath <- paste0(condaENV ,"/lib/R/library")
+.libPaths(LBpath)
+
+sudo ln -s cheng.envR4.0.rserver.conf rserver.conf
+sudo rstudio-server restart
+
+
+
+#Sys.setenv(LDFLAGS=SOpath) ### not working
+#SOpath <- paste0("-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,",condaENV,"/lib -Wl,-rpath-link,",condaENV,"/lib -L",condaENV,"/lib" )
+
+
+#check
+rstudio-server verify-installation
+
+
+#rsession-which-r=/opt/R/3.6.2/bin/R  #R3.6
+#rsession-which-r=/opt/R/4.0.3/bin/R  #R4.0
+#rsession-which-r=/home/chenzh/miniconda3/envs/R3.6/bin/R
+#rsession-which-r=/home/chenzh/miniconda3/envs/R3.5/bin/R
+
+
+#sudo rstudio-server restart
+
+
+#/lib64/libstdc++.so.6: # lack GLIBCXX_3.4.20
+#strings /lib64/libstdc++.so.6 |grep GLIBCXX 
+#cd ~/miniconda3
+#find ./ -name "libstdc++.so.6*"
+#strings ~/miniconda3/envs/R3.5/lib/libstdc++.so.6|grep GLIBCXX_3.4.20
+#llh ~/miniconda3/envs/R3.5/lib/libstdc++.so.6
+#strings  ~/miniconda3/envs/R3.5/lib/libstdc++.so.6.0.29|grep GLIBCXX_3.4.20
+#sudo cp /home/chenzh/miniconda3/envs/R3.5/lib/libstdc++.so.6.0.29 /lib64/
+
+#. bug fix https://cloud.tencent.com/developer/article/1819222
+#cd /lib64
+#ls -l libstdc++.so.6
+#libstdc++.so.6 -> libstdc++.so.6.0.19
+#sudo rm libstdc++.so.6
+#sudo ln -s libstdc++.so.6.0.29 libstdc++.so.6 ## relink to the new library
+
+
+
+# pro rstudio-server
+#curl -O https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+#sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
+#ls /opt/R/
+
+#' add different R version into rstudio-server
+#sudo vi /etc/rstudio/r-versions
+
+# /etc/rstudio/r-versions
+#Path: /opt/R/3.6.1
+#Path: /opt/R/3.6.2
+#Path: /opt/R/4.0.3
+
+
