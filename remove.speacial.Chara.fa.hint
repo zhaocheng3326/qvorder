@@ -1,0 +1,5 @@
+mkdir -p genome.fa_no_special_character
+cut -f 1 -d " " /san/Sophie/Genome/Human/IGenome/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/genome.fa | sed -e '/^[^>]/s/[^ATGCatgc]/N/g'  > genome.fa_no_special_character/genome.mod.clean.fa
+
+cd genome.fa_no_special_character
+bowtie-build genome.mod.clean.fa genome.mod.clean

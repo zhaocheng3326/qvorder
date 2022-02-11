@@ -1,0 +1,7 @@
+echo $DISPLAY
+
+DISPLAY="localhost:10.0" # which is the one work
+
+capabilities()
+
+

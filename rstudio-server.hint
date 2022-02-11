@@ -29,6 +29,8 @@ condaENV <- "/home/chenzh/miniconda3/envs/R4.0"
 LBpath <- paste0(condaENV ,"/lib/R/library")
 .libPaths(LBpath)
 
+sudo rstudio-server stop
+cd /etc/rstudio/
 sudo ln -s cheng.envR4.0.rserver.conf rserver.conf
 sudo rstudio-server restart
 

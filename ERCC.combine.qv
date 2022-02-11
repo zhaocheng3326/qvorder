@@ -1,0 +1,21 @@
+cd ~/Genome/mouse
+mkdir -p refdata-gex-mm10-2020-A_ERCC
+
+cd ~/Genome/mouse/refdata-gex-mm10-2020-A_ERCC
+ln -s /home/chenzh/Genome/refdata-gex-mm10-2020-A/fasta/genome.fa
+ln -s ~/Genome/refdata-gex-mm10-2020-A/genes/genes.gtf
+ln -s ~/Genome/refdata-gex-mm10-2020-A/genes/Gene.pos.bed
+ln -s /san/Sophie/Genome/Human/RefSeq/ERCC.genbank
+ln -s /san/Sophie/Genome/Human/release-89/ref/ERCC.fasta
+cat /san/Sophie/Genome/Human/RefSeq/genes-ERCC.gtf|grep ERCC|grep -v "^chr" > ERCC.gtf
+
+
+seqkit fx2tab ERCC.fasta|seqkit tab2fx > ERCC.wrap.fasta
+
+cat genome.fa ERCC.wrap.fasta > genome_ERCC.fa
+cat genes.gtf ERCC.gtf >  genes_ERCC.gtf
+
+STAR --runThreadN 20 --runMode genomeGenerate --genomeDir ./star_index --genomeFastaFiles genome_ERCC.fa --genomeSAindexNbases 14 --sjdbGTFfile genes_ERCC.gtf  --outFileNamePrefix /home/chenzh/Genome/mouse/refdata-gex-mm10-2020-A_ERCC/
+
+
+rsem-prepare-reference --gtf genes_ERCC.gtf genome_ERCC.fa rsem
