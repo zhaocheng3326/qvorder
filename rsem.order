@@ -1,3 +1,6 @@
+rsem-prepare-reference --gtf genes/genes.gtf fasta/genome.fa rsem
+
+
 grep ">" REF1.fa|cut -f 1 -d " "|sed -e 's/>//' |sed -e 's/_/\t/g'|awk '{print $1"_"$2,$1"_"$2"_"$3}' > REF1_mapping.txt
 rsem-prepare-reference --transcript-to-gene-map  REF1_mapping.txt --bowtie2 REF1.fa REF1
 

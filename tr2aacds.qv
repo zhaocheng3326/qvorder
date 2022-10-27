@@ -1,0 +1,2 @@
+cd ~/Downloads/evigene/TEMP
+/home/chenzh/.local/bin/evigene/scripts/prot/tr2aacds.pl -tidy -NCPU 2 -MAXMEM 1000 -log -cdna arath_TAIR10_20101214up.cdna
