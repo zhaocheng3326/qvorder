@@ -36,7 +36,9 @@ make install
 perl -e 'use  Text::Format'
 
 
-perl Makefile.PL PREFIX=/psc/home/zhaocheng/perl5/lib
+#perl Makefile.PL PREFIX=/psc/home/zhaocheng/perl5/lib
+perl Makefile.PL PREFIX=/home/chenzh/miniconda3/envs/small
+perl Makefile.PL PREFIX=/home/chenzh/miniconda3/envs/small/lib/site_perl/5.26.2/x86_64-linux-thread-multi
 make 
 make test
 make install

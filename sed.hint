@@ -1,3 +1,4 @@
+$sed 's/ \+ /\t/g' cell.s2.tsv |sed -e 's/\s/\t/g' > a
 sed -e 's/Parent=\(.*\?\)\./\1/' TAIR10.5UTR.gff |cut -f 9 |le
 intersectBed -a total.bed -b TE.gtf -wa -wb|cut -f 6,16|sed -e 's/gene_id//'|sed -e 's/; transcript_id\(.*\?\)//'|sed -e 's/// |sed -e s///'|sort|uniq|awk {'if ( != ) print bash'} > DAS_OV_TE.name
 grep "transposable_element_gene" TAIR10.gff |cut -f 9 |sed -e 's/.*\?Name=\(.*\?\)/\1/'| cut -d ";" -f 1 > TE.list

@@ -1,3 +1,4 @@
+find . -type f -empty -print -delete
 find . -name "*.pdf" -exec rm -rf {} \;
  find . -name "*.count" -exec wc {} \; |sort -n |wc
  find ./ -type f -printf "%s\t%p\n" | sort -n

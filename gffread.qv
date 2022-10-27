@@ -1,0 +1,1 @@
+gffread XIST.gtf  -g Homo_sapiens.GRCh38.dna.primary_assembly.fa -w -  -O > XIST.trans.fa
