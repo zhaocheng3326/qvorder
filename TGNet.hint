@@ -1,0 +1,3 @@
+export PERL5LIB=/home/chenzh/miniconda3/envs/RNABLOOM/lib/site_perl/5.26.2:$PERL5LIB
+./makeCytoscapeNetwork.sh -g example/input/ExampleScaffold.fasta -t example/input/ExampleTranscript.fasta -a example/input/Example.agp -n Example
+Retrieving scaffold features from AGP

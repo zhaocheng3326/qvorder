@@ -1,0 +1,1 @@
+unzip -p shinyproxy-2.6.0.jar BOOT-INF/classes/application-demo.yml
