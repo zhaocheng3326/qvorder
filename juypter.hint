@@ -1,1 +1,18 @@
 jupyter-nbconvert --to html circRNA_arabidopsis.ipynb
+
+
+cd $DIR
+jupyter notebook --debug
+
+#' set up jupter notebook in conda 
+python -m ipykernel install --user --name Vel --display-name "condaVel"
+
+jupyter kernelspec list
+
+jupyter kernelspec remove python3
+
+
+
+jupyter notebook --generate-config
+jupyter notebook password
+
