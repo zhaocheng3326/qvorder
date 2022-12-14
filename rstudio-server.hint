@@ -1,5 +1,8 @@
+rm -rf ~/.config/rstudio/
+rm -rf ~/.local/share/rstudio/
 ssh chenzh@lanner-lab.ki.se -L127.0.0.1:8787:127.0.0.1:8787
 
+/usr/lib/rstudio-server/bin/rserver --server-daemonize=0 --www-port 8787 --rsession-which-r=$(which R) --rsession-ld-library-path=$CONDA_PREFIX/lib
 # install different version of R
 
 # R3.5
