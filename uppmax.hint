@@ -1,0 +1,22 @@
+cp myFile $SNIC_TMP
+
+
+# Bioinformatics tools require loading the “bioinfo-tools” module first.
+#module avail — list all modules
+
+module avail <part of tool name> — search for modules (full name not needed and case insensitive)
+
+module load <module name> — Loads the module
+
+module unload <module name> — Unloads the module
+
+module list — Lists loaded modules
+
+module help <module name> — Displays a brief module-specific help
+
+module spider <part of tool name> — like “avail” but “stronger”
+
+
+#' in bash
+
+${VAR:=value}

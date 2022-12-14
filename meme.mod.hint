@@ -1,0 +1,2 @@
+cat /home/chenzh/Genome_new/motif_databases/METHYLCYTOSINE/yin2017.meme |sed -e 's/\t//g' |grep -v "URL"|tr '\n' '^' |sed -e 's/\^letter-probability/letter-probability/g'|sed -e 's/\^  /^ /g'|sed -e 's/\^\^MOTIF/^MOTIF/g' | tr '^' '\n' > /home/chenzh/Genome_new/motif_databases/METHYLCYTOSINE/yin2017.mod.meme
+

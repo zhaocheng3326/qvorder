@@ -1,0 +1,4 @@
+library(mindr)
+2(out <- capture.output(str(cellchat)))
+3out2 <- paste(out, collapse="\n")
+4mm(gsub("\\.\\.@","# ",gsub("\\.\\. ","#",out2)),type ="text")

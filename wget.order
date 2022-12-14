@@ -1,2 +1,3 @@
+wget --recursive --no-paren https://busco-data.ezlab.org/v5/data/
 wget --no-check-certificate https://cloud.psc.ac.cn/index.php/s/nyjiXBcc9NK9zA2/download
 wget -c --limit-rate 20k -t 5 web
