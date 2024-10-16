@@ -16,3 +16,8 @@ jupyter kernelspec remove python3
 jupyter notebook --generate-config
 jupyter notebook password
 
+
+# add conda environment to juypter lab
+https://saturncloud.io/blog/how-to-add-conda-environment-to-jupyterlab/
+
+juypter-lab

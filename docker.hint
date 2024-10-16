@@ -1,3 +1,4 @@
+docker rm $(docker ps --filter status=exited -q)
 sudo docker cp 6e382faafaef:/usr/local/lib/R/site-library/infercnv/extdata/gencode_downsampled.EXAMPLE_ONLY_DONT_REUSE.txt ./
 sudo docker ps -l
 sudo docker images
